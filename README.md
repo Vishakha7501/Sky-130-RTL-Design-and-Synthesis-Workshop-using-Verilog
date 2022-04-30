@@ -1,4 +1,4 @@
-# RTL design using Verilog with SKY130 Technology <!-- omit in toc -->
+# SKY130 RTL Design and Synthesis using Verilog <!-- omit in toc -->
 ![](VSD_Workshop_Detail.png)
 
 
