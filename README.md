@@ -1,5 +1,5 @@
 # RTL design using Verilog with SKY130 Technology<!-- omit in toc -->
-![](assets/Verilog_flyer.png)
+![](VSD_Workshop_Detail.png)
 
 
 Table of Contents
