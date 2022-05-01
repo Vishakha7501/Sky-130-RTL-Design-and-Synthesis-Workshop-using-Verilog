@@ -144,6 +144,7 @@ A Constraint is a guidance file given to a synthesizer inorder to enable an opti
 ![Screenshot (157)](https://user-images.githubusercontent.com/93824690/166146410-42e93e44-0fba-4540-a819-95afff4e1b8b.png)
 
 
+
 # 3. Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
 ## 3.1. Timing libs
 ### 3.1.1. Sky130 Process Node
