@@ -143,11 +143,54 @@ A Constraint is a guidance file given to a synthesizer inorder to enable an opti
 
 ![Screenshot (157)](https://user-images.githubusercontent.com/93824690/166146410-42e93e44-0fba-4540-a819-95afff4e1b8b.png)
 
+# 2. Day 2 - Timing Libs, Hierarchial Vs Flat Synthesis and Efficient Flop Coding Styles
+## 2.1. Introduction to timing labs
+```
+__Command to open the libary file
+$ gvim ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+__To shut off the background colors/ syntax off:
+: syn off
+__To enable the line numbers
+: se nu
+```
+### Library file
+
+![Screenshot (150)](https://user-images.githubusercontent.com/93824690/166147361-8f538de7-24d2-410e-81c2-832710298c5a.png)
+
+### Contents
+
+For a design to work, there are three important parameters that determines how the Silicon works: Process (Variations due to Fabrications), Voltage (Changes in the behavior of the circuit) and Temperature (Sensitivity of semiconductors). Libraries are characterized to model these variations. 
+
+![Screenshot (162)](https://user-images.githubusercontent.com/93824690/166147849-14fa3eaf-0ca9-440c-bbe8-7b52f6cd682e.png)
+
+### Various Flavours of AND Cell
+
+![Screenshot (163)](https://user-images.githubusercontent.com/93824690/166147855-692033f0-08e1-465f-98b6-5a9fba6a3eb0.png)
 
 
-# 3. Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
-## 3.1. Timing libs
-### 3.1.1. Sky130 Process Node
+## 2.2. Hierarchial synthesis vs Flat synthesis 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 The SKY130 is a mature 180nm-130nm hybrid technology originally developed internally by Cypress Semiconductor before being spun out into SkyWater Technology and made accessible to general industry. SkyWater and Google’s collaboration is now making this technology accessible to everyone! [source: https://github.com/google/skywater-pdk]  
 ### 3.1.2. Introduction to standard cell library
 On the gate-level the target architecture is usually described by a “Liberty file”. The Liberty file format is an industry standard format that can be used to describe the behaviour and other properties of standard library cells. [source from The Liberty Library Modeling Standard: http://www.opensourceliberty.org/.]  
