@@ -85,6 +85,7 @@ $ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 #### GTKWAVE Analysis
 
 ![Screenshot (142)](https://user-images.githubusercontent.com/93824690/166143969-6e8fb91c-fc09-4a8b-b779-5b45b834888c.png =250x250)
+<img src="https://user-images.githubusercontent.com/93824690/166143969-6e8fb91c-fc09-4a8b-b779-5b45b834888c.png" width="200" height="150">
 
 
 #### Access Module Files
