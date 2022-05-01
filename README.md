@@ -6,9 +6,7 @@ Table of Contents
 - [Introduction](#-introduction)
 - [1. Day 1 - Introduction to Verilog RTL design and Synthesis](#1-day-1---introduction-to-verilog-rtl-design-and-synthesis)
   - [1.1. Introduction to open source simulator iverilog](#11-introduction-to-open-source-simulator-iverilog)
-    - [2.1.1. Simulation results](#211-simulation-results)
   - [1.2. Labs using iverilog and gtkwave](#12-labs-using-iverilog-and-gtkwave)
-    - [2.2.1.1. Read RTL design](#2211-read-rtl-design)
   - [1.3. Introduction to Yosys and Logic Synthesis](#13-introduction-to-Yosys-and-Logic-Synthesis)
   - [1.4. Labs using Yosys and Sky130 PDKs](#14-labs-using-Yosys-and-Sky130-PDKs)
  - [2. Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](#2-day-2---timing-libs-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
@@ -29,6 +27,7 @@ Table of Contents
   - [5.3. Labs on "Incomplete overlapping Case"](#53-labs-on-"incomplete-overlapping-case")
   - [5.4. for loop and for generate"](#54-for-loop-and-for-generate")
   - [5.5. Labs on "for loop" and "for generate"](#55-labs-on-"for-loop"-and-"for-generate")
+  - 
 # Introduction
 The report is based on 5-day RTL Design and Synthesis in Verilog using the SKY130 Technolog workshop facilitated by VSD on using open source tools involving **iVerilog, GTKWave, Yosys** with **Sky130 technology**.  
 This workshop introduces to the digital logic design using Verilog HDL. Validating the functionality of the design using Functional Simulation. Writing Test Benches to validate the functionality of the RTL design .Logic synthesis of the Functional RTL Code. Gate Level Simulation of the Synthesized Netlist.
@@ -44,8 +43,9 @@ In the digital circuit design, **register-transfer level (RTL)** is a design abs
 **Test Bench**: It is the setup to apply stimulus(test vectors) to design to checks its functionality.
 
 ### HOW SIMULATOR WORKS 
-Simulator looks for changes on input signals and based on that output is evaluated.
 ![](test bench.png)
+Simulator looks for changes on input signals and based on that output is evaluated.
+
 (Design may have 1 or more primary inputs and primary outputs but TB doesn't have.)
  ### SIMULATION FLOW
 ![](iverilog based.png)
