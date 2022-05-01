@@ -45,7 +45,7 @@ In the digital circuit design, **register-transfer level (RTL)** is a design abs
 
 ### HOW SIMULATOR WORKS 
 **Simulator** looks for changes on input signals and based on that output is evaluated.
-![test bench](https://user-images.githubusercontent.com/93824690/166142807-b8b5a040-009f-4610-9691-cc3e5c53bbbe.png)
+![test bench](https://user-images.githubusercontent.com/93824690/166142807-b8b5a040-009f-4610-9691-cc3e5c53bbbe.png =250x250)
 
 **Design** may have 1 or more primary inputs and primary outputs but **TB** doesn't have.)
 
@@ -238,73 +238,11 @@ Sub-module level synthesis is preferred when there are multiple instances of sam
 
 ![Screen Shot 2021-09-02 at 9 13 33 PM](https://user-images.githubusercontent.com/89927660/131940384-c0bf6a0a-a73c-4c99-95a4-84a7a654e774.png)
 
-
-### FLIP FLOP OVERVIEW
+## 2.2. Various Flop coding styles and optimization 
 
 In a digital design, when an input signal changes state, the output changes after a propogation delay. All logic gates add some delay to singals. These delays cause expected and unwanted transitions in the output, called as **Glitches** where the output value is momentarily different from the expected value. An increased delay in one path can cause glitch when those signals are combined at the output gate. 
  
-### 3.1.2. Introduction to standard cell library
-On the gate-level the target architecture is usually described by a “Liberty file”. The Liberty file format is an industry standard format that can be used to describe the behaviour and other properties of standard library cells. [source from The Liberty Library Modeling Standard: http://www.opensourceliberty.org/.]  
-As a part of SkyWater Open Source PDK, [multiple](https://skywater-pdk.readthedocs.io/en/main/contents/libraries/foundry-provided.html) standard digital cell libraries are provided that cover a range of different target architectures [source: https://github.com/google/skywater-pdk].  
-In this workshop we will be using sky130_fd_sc_hd (high density) standard cell library (target architecture) to map our synthesized design from Yosys.  
-Some trivial details of our Liberty file are shown below. Although a thorough look into it has to be given to understand its potenetial.  
-![Target Archtecture](assets/liberty.png)  
-Also let us have a look at some of the variants of 2-input AND cells from the Liberty library.  
-Different variants of and2 with specific cell descriptions can be seen.  
-![](assets/lib_and2_variants.png)  
-[sky130_fd_sc_hd__and2](https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_hd/cells/and2/README.html)  
 
-
-## 3.2. Hierarchial synthesis vs Flat synthesis
-### 3.2.1. Hierarchial synthesis
-In hierarchial synthesis the hierarchy of the RTL design is preserved through the final netlist. Let us look at the below RTL design where we have two sub modules, both instantiated by a top modules.  
-![](assets/rtl_multiple_modules.png)
-
-Generic synthesis preserves the hierarchy. It can also be seen that the cells are not mapped to sky130 specific technology yet.  
-![](assets/synth_multipl_modules_hier.png)
-
-abc tool maps the technology to Sky130 and generates the netlist. It can be seen that the hierarchy is still preserved.  
-![](assets/synth_abc_sky130_hier.png)
-
-It is quite interesting to see how tool itself goes through optimization. RTL mutiple modules.v when synthesized with two different versions of yosys- 07 and 0.9 versions.  
-The optimization at the technology mapping of sub_modules2.  
-Also quite intesting how yosys decided on two different flavors of and2 for sub_module1 in these versions.    
-![](assets/yosys_versions.png)
-
-Details of the realized standard sky130 cells in this design can be found from Skywater PDK documentation.  
-[2-input AND](https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_hd/cells/and2/README.html)  
-[Input isolation, noninverted sleep](https://antmicro-skywater-pdk-docs.readthedocs.io/en/test-submodules-in-rtd/contents/libraries/sky130_fd_sc_hd/cells/lpflow_inputiso1p/README.html)  
-
-### 3.2.2. Selective sub-module level synthesis
-Just like synthesizing an RTL design at the top mudule level, it can be synthesized at the sub-module level as well. This level of freedom brings the below advantsges.  
-* &emsp;  Multiple instantions: In case of having multiple instantiations in our design, this feature helps to synthesize just one instance and use it iteratively throughout the top level.    
-* &emsp;  Massive desgins: In case of massive design, sub-module level synthesis reduces the burden on sythesis tool in-terms of performance and time.  
- 
-We can take a look at the same example of multiple_modules.v.  Let us synthesize only sub_module1 and see how the final netlist appears.  
-We can see that the synth command just looks at the specified sub_module1 alone and sub_module2 is ommitted from synthesis.  
-![](assets/synth_submodule1.png)  
-
-The generated synthesis output this time gives only the AND gate for the sub_module1 rtl.  
-![](assets/synth_submodule1_out.png)  
-
-The graphical view clearly indicates the netist for synthesized sub_module1.  
-![](assets/show_submodule1.png)  
-
-
-### 3.2.3. Flat synthesis
-yosys command flatten :"This pass flattens the design by replacing cells by their implementation. This pass is very similar to the 'techmap' pass. The only difference is that this pass is using the current design as mapping library.  
-Cells and/or modules with the 'keep_hierarchy' attribute set will not be flattened by this command." [source: http://yosyshq.net/yosys/cmd_flatten.html]  
-
-As the name suggestes this pass flattens out the design and hence the hierarchy is lost.  
-Let us observe the impact of 'flatten' on systhesized output of same RTL design- multiple_modules.v.  
-![flatten](asstes/../assets/yosys_flatten.png)  
-
-We can see that the submodules were deleted and hierarchy is no longer preserved.  
-Please pay attantion to the interesting netlist generated.  
-![](assets/yosys_flatten_multiple_modules.png)  
-
-Graphical view of flattened netlist is hown below.  
-![](assets/flat_multiple_modules_show.png)  
 
 ## 3.3. Various Flop coding styles and optimization
 abc tool maps only the combinational logic cells from the liberty. It doesn't look for the register cells.  
