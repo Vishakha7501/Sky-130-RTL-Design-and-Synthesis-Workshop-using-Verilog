@@ -69,17 +69,18 @@ $ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 ![Screenshot (130)](https://user-images.githubusercontent.com/93824690/166142874-66d2c8f4-0fc5-4a82-91ae-b3821f08f56e.png) 
  
 **sky130RTLDesignAndSynthesisWorkshop** Directory has: My_Lib - which contains all the necessary library files; where lib has the standard cell libraries to be used in synthesis and verilog_model with all standard cell verilog models for the standard cells present in the lib. Ther verilog_files folder contains all the experiments for lab sessions including both verilog code and test bench codes.
-We are given a default set of files and libraries shown below to work on using the practical lab instance.
+
+<--We are given a default set of files and libraries shown below to work on using the practical lab instance.
 
 ![Screenshot (134)](https://user-images.githubusercontent.com/93824690/166143655-b00175e1-864b-4aac-8c3c-a4f72e388351.png)
 
-###Simulation using iverilog simulator - 2:1 multiplexer rtl design
+### Simulation using iverilog simulator - 2:1 multiplexer rtl design
 
 ##Verilog file of a simple 2:1 multiplexer
 
 ![Screenshot (135)](https://user-images.githubusercontent.com/93824690/166143401-cb52b623-5095-45f4-b880-59b88e4c4bca.png)
 
-##Access Module Files
+## Access Module Files
 
 ![Screen Shot 2021-09-02 at 12 23 28 AM](https://user-images.githubusercontent.com/89927660/131786618-c6d4663f-5375-48dc-aa16-46b70e6797da.png)
 
