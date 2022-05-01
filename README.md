@@ -67,41 +67,18 @@ $ git clone https://github.com/kunalg123/vsdflow.git
 $ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 ```
 ![Screenshot (130)](https://user-images.githubusercontent.com/93824690/166142874-66d2c8f4-0fc5-4a82-91ae-b3821f08f56e.png) 
-(sky130RTLDesignAndSynthesisWorkshop Directory has: My_Lib - which contains all the necessary library files; where lib has the standard cell libraries to be used in synthesis and verilog_model with all standard cell verilog models for the standard cells present in the lib. Ther verilog_files folder contains all the experiments for lab sessions including both verilog code and test bench codes.)
-**Synthesis**: The RTL design description is translated into gate-level description by a synthesis tool. Very popular Open source synthesis tool [Yosys](http://bygone.clairexen.net/yosys/) is used for synthesis.  
-The synthesis tool takes the RTL desgin and the cell library (liberty file) as inputs and translates the RTL into netlist.
-Hence the netlist is the gate-level representation of the specifiec logic desgin via Verilog HDL in RTL.  
+ 
+> sky130RTLDesignAndSynthesisWorkshop Directory has: My_Lib - which contains all the necessary library files; where lib has the standard cell libraries to be used in synthesis and verilog_model with all standard cell verilog models for the standard cells present in the lib. Ther verilog_files folder contains all the experiments for lab sessions including both verilog code and test bench codes.
+We are given a default set of files and libraries shown below to work on using the practical lab instance.
+![Screenshot (134)](https://user-images.githubusercontent.com/93824690/166143655-b00175e1-864b-4aac-8c3c-a4f72e388351.png)
 
-![](assets/synthesis.drawio.png)
-
+###Simulation using iverilog simulator - 2:1 multiplexer rtl design
+##Verilog file of a simple 2:1 multiplexer
+![Screenshot (135)](https://user-images.githubusercontent.com/93824690/166143401-cb52b623-5095-45f4-b880-59b88e4c4bca.png)
+##Access Module Files
+![Screen Shot 2021-09-02 at 12 23 28 AM](https://user-images.githubusercontent.com/89927660/131786618-c6d4663f-5375-48dc-aa16-46b70e6797da.png)
 ### 2.2.1. Yosys synthesizer flow
 
-#### 2.2.1.1. Read RTL design
-read_verilog: This command loads modules from a Verilog file to the current design[].  
-![](assets/read_verilog.png)
-
-#### 2.2.1.2. Generic synthesis
-synth[options]: This command runs the default synthesis script. This command does not operate on partly selected designs[].  
-&emsp;-top <module>: use the specified module as top module (default='top')  
-![](assets/synth_command.png)  
-![](assets/synth.png)
-
-#### 2.2.1.3. Read Sky130 cell library
-read_liberty[options]: This command reads cells from liberty file as modules into current design[].  
-&emsp;-lib: only create empty blackbox modules  
-![](assets/read_liberty.png)
-
-#### 2.2.1.4. Generate netlist
-abc[options]: This pass uses the ABC tool [1] for technology mapping of yosys's internal gate library to a target architecture[].  
-&emsp;-liberty <file>: generate netlists for the specified cell library (using the liberty file format).  
-&emsp;In our case 'sky130_fd_sc_hd__tt_025C_1v80.lib'.  
-*Note: When no target cell library is specified the Yosys standard cell library is loaded into ABC before the ABC script is executed.*  
-![](assets/abc_command.png)  
-![](assets/abc_liberty.png)
-
-#### 2.2.1.5. Show
-Create a graphviz DOT file for the selected part of the design and compile it to a graphics file (usually SVG or PostScript)[].  
-![](assets/show.png)
 
 # 3. Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
 ## 3.1. Timing libs
