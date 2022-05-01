@@ -170,28 +170,79 @@ For a design to work, there are three important parameters that determines how t
 
 ## 2.2. Hierarchial synthesis vs Flat synthesis 
 
+### Hierarchial synthesis  
+```
+_Opening the file used for this experiment
+$ gvim multiple_modules.v
+_Invoke Yosys
+$ yosys
+_Read library 
+$ read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+_Read Design
+$ read_verilog multiple_modules.v
+_Synthesize Design
+$ synth -top multiple_modules
+_Generate Netlist
+$ abc -liberty ../my_lib/lib/sky130_fd_sc_hd__t_025C_1v80.lib
+_Realizing Graphical Version of Logic for multiple modules
+$ show multiple_modules
+_Writing the netlist in a crisp manner 
+$ write_verilog -noattr multiple_modules_hier.v
+$ !gvim multiple_modules_hier.v
+```
+**Multiple Modules:** - 2 SubModules
+**Staistics of Multiple Modules**
+
+![Screen Shot 2021-09-02 at 5 04 14 PM](https://user-images.githubusercontent.com/89927660/131922463-01b29515-c90d-4431-aa86-f10b15fa8d82.png)
+
+**Realization of the Logic**
+
+![Screen Shot 2021-09-02 at 5 12 46 PM](https://user-images.githubusercontent.com/89927660/131923051-5d882430-fa4a-4b0d-8b70-0857c58f9b34.png)
+
+**Netlist file**
+
+![Screen Shot 2021-09-04 at 4 32 57 AM](https://user-images.githubusercontent.com/89927660/132089951-73857fd9-aba8-40ac-b477-b316c8df5dc4.png)
+
+### Flat synthesis  
+
+```
+_To flatten the netlist
+$ flatten
+_Writing the netlist in a crisp manner and to view it
+$ write_verilog -noattr multiple_modules_flat.v
+$ !gvim multiple_modules_flat.v
+```
+**Realization of the Logic**
+
+![Screen Shot 2021-09-02 at 6 14 16 PM](https://user-images.githubusercontent.com/89927660/131927662-d25c4d37-c0c1-41a7-ab14-9399840eb3ee.png)
+  
+ 
+**Netlist file**
+
+![Screen Shot 2021-09-02 at 6 10 30 PM](https://user-images.githubusercontent.com/89927660/131927406-1410346f-77bd-4fe0-a589-ffe2bf2f1a53.png)
 
 
+### SUB MODULE LEVEL SYNTHESIS
+
+Sub-module level synthesis is preferred when there are multiple instances of same module. Sythesizing the same module over several times may not be advantageous with respect to time. Instead, synthsis can be performed for one module, its netlist can be replicated and then stitched together in the top module. This is also used particulary in massive designs using divide and conquer method. 
+
+**Statistics of Sub-module**
+
+![Screen Shot 2021-09-02 at 9 11 28 PM](https://user-images.githubusercontent.com/89927660/131940332-d8272cc3-affb-471d-9dd0-1ad951d86c22.png)
+
+**Graphical Realization of the Logic**
+
+![Screen Shot 2021-09-02 at 9 12 18 PM](https://user-images.githubusercontent.com/89927660/131940277-9fc3e2fe-b185-4d91-9b2d-86e54c1d1768.png)
+
+**NetList File of Sub-module**
+
+![Screen Shot 2021-09-02 at 9 13 33 PM](https://user-images.githubusercontent.com/89927660/131940384-c0bf6a0a-a73c-4c99-95a4-84a7a654e774.png)
 
 
+### FLIP FLOP OVERVIEW
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The SKY130 is a mature 180nm-130nm hybrid technology originally developed internally by Cypress Semiconductor before being spun out into SkyWater Technology and made accessible to general industry. SkyWater and Google’s collaboration is now making this technology accessible to everyone! [source: https://github.com/google/skywater-pdk]  
+In a digital design, when an input signal changes state, the output changes after a propogation delay. All logic gates add some delay to singals. These delays cause expected and unwanted transitions in the output, called as **Glitches** where the output value is momentarily different from the expected value. An increased delay in one path can cause glitch when those signals are combined at the output gate. 
+ 
 ### 3.1.2. Introduction to standard cell library
 On the gate-level the target architecture is usually described by a “Liberty file”. The Liberty file format is an industry standard format that can be used to describe the behaviour and other properties of standard library cells. [source from The Liberty Library Modeling Standard: http://www.opensourceliberty.org/.]  
 As a part of SkyWater Open Source PDK, [multiple](https://skywater-pdk.readthedocs.io/en/main/contents/libraries/foundry-provided.html) standard digital cell libraries are provided that cover a range of different target architectures [source: https://github.com/google/skywater-pdk].  
