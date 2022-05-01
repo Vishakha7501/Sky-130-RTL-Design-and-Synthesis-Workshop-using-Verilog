@@ -3,29 +3,44 @@
 
 
 Table of Contents
-- [1. Introduction](#1-introduction)
-- [2. Day 1 - Introduction to Verilog RTL design and Synthesis](#2-day-1---introduction-to-verilog-rtl-design-and-synthesis)
-  - [2.1. Introduction to Simulation](#21-introduction-to-simulation)
+- [Introduction](#1-introduction)
+- [1. Day 1 - Introduction to Verilog RTL design and Synthesis](#1-day-1---introduction-to-verilog-rtl-design-and-synthesis)
+  - [1.1. Introduction to open source simulator iverilog](#11-introduction-to-open-source-simulator-iverilog)
     - [2.1.1. Simulation results](#211-simulation-results)
-  - [2.2. Introduction to Synthesis](#22-introduction-to-synthesis)
+  - [1.2. Labs using iverilog and gtkwave](#22-labs-using-iverilog-and-gtkwave)
     - [2.2.1. Yosys synthesizer flow](#221-yosys-synthesizer-flow)
       - [2.2.1.1. Read RTL design](#2211-read-rtl-design)
       - [2.2.1.2. Generic synthesis](#2212-generic-synthesis)
       - [2.2.1.3. Read Sky130 cell library](#2213-read-sky130-cell-library)
       - [2.2.1.4. Generate netlist](#2214-generate-netlist)
       - [2.2.1.5. Show](#2215-show)
-- [3. Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](#3-day-2---timing-libs-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
-  - [3.1. Timing libs](#31-timing-libs)
+  - [1.3. Introduction to Yosys and Logic Synthesis](#22-introduction-to-Yosys-and-Logic-Synthesis)
+  - [1.4. Labs using Yosys and Sky130 PDKs](#22-labs-using-Yosys-and-Sky130-PDKs)
+ - [2. Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](#2-day-2---timing-libs-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
+  - [2.1. Introduction to Timing .libs](#31-introduction- to-timing-.libs)
     - [3.1.1. Sky130 Process Node](#311-sky130-process-node)
     - [3.1.2. Introduction to standard cell library](#312-introduction-to-standard-cell-library)
   - [3.2. Hierarchial synthesis vs Flat synthesis](#32-hierarchial-synthesis-vs-flat-synthesis)
     - [3.2.1. Hierarchial synthesis](#321-hierarchial-synthesis)
     - [3.2.2. Selective sub-module level synthesis](#322-selective-sub-module-level-synthesis)
     - [3.2.3. Flat synthesis](#323-flat-synthesis)
-  - [3.3. Various Flop coding styles and optimization](#33-various-flop-coding-styles-and-optimization)
+  - [3.3. Various Flop Coding Styles and optimization](#33-various-flop-coding-styles-and-optimization)
     - [3.3.1. Optimizations](#331-optimizations)
-
-# 1. Introduction
+- [3. Day 3 - Combinational and Sequential Optimizations](#3-day-3---combinational-and-sequential-optimizations)
+  - [3.1. Introduction to Optimizations](#31-introduction-to-optimizations)
+  - [3.2. Combinational logic Optimizations](#32-combinational- logic-optimizations)
+  - [3.3. Sequential logic Optimizations](#33-sequential-logic-optimizations)
+- [4. Day 4 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#4-day-4---GLS,-blocking-vs-non-blocking-and-Synthesis-Simulation-mismatch)
+  - [4.1. GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements](#41-GLS,-Synthesis-Simulation-mismatch-and-Blocking/Non-blocking-statements)
+  - [4.2. Labs on GLS and Synthesis-Simulation Mismatch](#42-Labs-on-GLS-and-Synthesis-Simulation-Mismatch)
+  - [4.3. Labs on synth-sim mismatch for blocking statement](#43-Labs-on-synth-sim-mismatch-for-blocking-statement)
+- [5. Day 5 - Optimization in synthesis](#1-day-1---optimization-in-synthesis)
+  - [5.1. If Case constructs](#51-if-Case-constructs)
+  - [5.2. Labs on "Incomplete If Case"](#52-labs-on-"incomplete-if-case")
+  - [5.3. Labs on "Incomplete overlapping Case"](#53-labs-on-"incomplete-overlapping-case")
+  - [5.4. for loop and for generate"](#54-for-loop-and-for-generate")
+  - [5.5. Labs on "for loop" and "for generate"](#55-labs-on-"for-loop"-and-"for-generate")
+# Introduction
 This is a 5-day workshop from VSD-IAT on RTL design and synthesis using open source silicon toolchains involving iVerilog, GTKWave, Yosys with Sky130 technology.  
 This report is written as a part of final submission to summarize the 5-day journey through the workshop.
 
