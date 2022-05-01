@@ -45,11 +45,13 @@ In the digital circuit design, **register-transfer level (RTL)** is a design abs
 ### HOW SIMULATOR WORKS 
 **Simulator** looks for changes on input signals and based on that output is evaluated.
 ![test bench](https://user-images.githubusercontent.com/93824690/166142807-b8b5a040-009f-4610-9691-cc3e5c53bbbe.png)
+
 **Design** may have 1 or more primary inputs and primary outputs but **TB** doesn't have.)
 
  ### SIMULATION FLOW
 ![iverilog based](https://user-images.githubusercontent.com/93824690/166142840-4d8a8377-526c-444e-9498-dc76068046fc.png)
- **Simulator** continuously checks for changes in the input. If there is an input change, the output is evaluated; else the simulator will never evaluate the output.
+
+**Simulator** continuously checks for changes in the input. If there is an input change, the output is evaluated; else the simulator will never evaluate the output.
 
 ## 1.2. Labs using iverilog & gtkwave
  
