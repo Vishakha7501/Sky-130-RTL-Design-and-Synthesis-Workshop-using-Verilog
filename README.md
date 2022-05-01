@@ -44,11 +44,11 @@ In the digital circuit design, **register-transfer level (RTL)** is a design abs
 
 ### HOW SIMULATOR WORKS 
 **Simulator** looks for changes on input signals and based on that output is evaluated.
-![](test bench.png)
+![test bench](https://user-images.githubusercontent.com/93824690/166142807-b8b5a040-009f-4610-9691-cc3e5c53bbbe.png)
 **Design** may have 1 or more primary inputs and primary outputs but **TB** doesn't have.)
 
  ### SIMULATION FLOW
-![](iverilog based.png)
+![iverilog based](https://user-images.githubusercontent.com/93824690/166142840-4d8a8377-526c-444e-9498-dc76068046fc.png)
  **Simulator** continuously checks for changes in the input. If there is an input change, the output is evaluated; else the simulator will never evaluate the output.
 
 ## 1.2. Labs using iverilog & gtkwave
@@ -64,7 +64,7 @@ $ git clone https://github.com/kunalg123/vsdflow.git
 //Git Clone sky130RTLDesignAndSynthesisWorkshop. 
 $ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 ```
-![](Screenshot (130).png) 
+![Screenshot (130)](https://user-images.githubusercontent.com/93824690/166142874-66d2c8f4-0fc5-4a82-91ae-b3821f08f56e.png) 
 (sky130RTLDesignAndSynthesisWorkshop Directory has: My_Lib - which contains all the necessary library files; where lib has the standard cell libraries to be used in synthesis and verilog_model with all standard cell verilog models for the standard cells present in the lib. Ther verilog_files folder contains all the experiments for lab sessions including both verilog code and test bench codes.)
 **Synthesis**: The RTL design description is translated into gate-level description by a synthesis tool. Very popular Open source synthesis tool [Yosys](http://bygone.clairexen.net/yosys/) is used for synthesis.  
 The synthesis tool takes the RTL desgin and the cell library (liberty file) as inputs and translates the RTL into netlist.
