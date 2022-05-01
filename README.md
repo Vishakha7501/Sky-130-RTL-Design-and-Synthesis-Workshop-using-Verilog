@@ -238,33 +238,60 @@ Sub-module level synthesis is preferred when there are multiple instances of sam
 
 ![Screen Shot 2021-09-02 at 9 13 33 PM](https://user-images.githubusercontent.com/89927660/131940384-c0bf6a0a-a73c-4c99-95a4-84a7a654e774.png)
 
-## 2.2. Various Flop coding styles and optimization 
-
-In a digital design, when an input signal changes state, the output changes after a propogation delay. All logic gates add some delay to singals. These delays cause expected and unwanted transitions in the output, called as **Glitches** where the output value is momentarily different from the expected value. An increased delay in one path can cause glitch when those signals are combined at the output gate. 
- 
-
 
 ## 3.3. Various Flop coding styles and optimization
-abc tool maps only the combinational logic cells from the liberty. It doesn't look for the register cells.  
-If the RTL design has sequential logic, dfflibmap pass has to be executed before abc pass. dfflibmap pass looks for the register cells in the Liberty and maps to the sequential logic from the synthesis. And then abc pass has to used to complete the mepping for combinatorial logic.  
-![](assets/dfflibmap.png)  
-![](assets/dfflibmap_abc_liberty.png)  
-Without dfflibmap pass if abc pass is executed, and if the design has only registers, abc has nothing to map and warns like below.  
-![](assets/no_dfflibmap_abc.png)  
-First the register cells must be mapped to the registers that are available on the target architectures. The 
-target architecture might not provide all variations of d-type flip-flops with positive and negative clock
-edge, high-active and low-active asynchronous set and/or reset, etc. Therefore the process of mapping the
-registers might add additional inverters to the design and thus it is important to map the register cells
-first. [source: [Yosys manual](https://raw.githubusercontent.com/wiki/jospicant/IceStudio/yosys_manual.pdf)]  
+In a digital design, when an input signal changes state, the output changes after a propogation delay. All logic gates add some delay to singals. These delays cause expected and unwanted transitions in the output, called as _Glitches_ where the output value is momentarily different from the expected value. An increased delay in one path can cause glitch when those signals are combined at the output gate. In short, more combinational circuits lead to more glitchy outputs that will not settle down with the output value. 
 
-Let us try to understand this with an example RTL design- 'dff_asyncres.v'.  
-Let us run synth -top on the design and take a look how it looks. We can see that it just represet a d-flip flop.  
-![](assets/dff_asyncres_snyth.png)  
-Let us run dfflibmap -liberty pass on this design and see how it looks. dfflibmap mapped a variant of d-flip flop to our design and this led to an additional inverter in the design.  
-![](assets/dff_asyncres_dfflibmap_alone.png)  
-Now abc -liberty pass has to be run to complete the mapping of combination logic (the inverter cell). This comepletes the mapping.  
-![](assets/dfflibmap_abc_both.png)  
+**Flip flop overview**
+A D flip-flop is a sequential element that follows the input pin d at the clock's given edge. D flip-flop is a fundamental component in digital logic circuits.
+There are two types of D Flip-Flops being implemented: Rising-Edge D Flip Flop and Falling-Edge D Flip Flop.
+
+![fe verilog-d-flip-flop](https://user-images.githubusercontent.com/93824690/166153680-a44e9aa1-4056-4cfe-8a09-a096e3da9dc1.png)
+
+Every flop element needs an initial state, else the combinational circuit will evaluate to a garbage value. In order to achieve this, there are control pins in the flop namely: Set and Reset which can either be Synchronous or Asynchronous. 
+
+#### _Asynchronous Reset/Set:_
+
+![Screen Shot 2021-09-02 at 10 11 42 PM](https://user-images.githubusercontent.com/89927660/131946717-7cdd0aeb-369a-4ade-b6d2-b9b7fc51b13e.png)
+
+![Screen Shot 2021-09-02 at 10 16 12 PM](https://user-images.githubusercontent.com/89927660/131947092-dd26c7ca-25c2-48d0-9841-d9e0ad5d5a66.png)
+
+
+>_**Note:** Here, always block gets evaluated when there is a change in the clock or change in the set/reset.The circuit is sensitive to positive edge of the clock. Upon the signal going low/high depending on reset or set control, singal q line goes changes respectively. Hence, it does not wait for the positive edge of the clock and happens irrespective of the clock_.
+
+#### _Synchronous Reset:_
+
+![Screen Shot 2021-09-02 at 10 19 42 PM](https://user-images.githubusercontent.com/89927660/131946706-2222f473-89bc-4a2a-85df-3ffb0c01e77e.png)
+
+
+#### _Both Synchronous and Asynchronous Reset:_
+
+![Screen Shot 2021-09-02 at 10 28 38 PM](https://user-images.githubusercontent.com/89927660/131946998-d79712a6-2c72-44ae-95c2-596372b3365c.png)
+
+
+### FLIP FLOP SIMULATION
+
+```
+#Steps Followed for analysing Asynchronous behavior:
+//Load the design in iVerilog by giving the verilog and testbench file names
+$ iverilog dff_asyncres.v tb_dff_asyncres.v 
+//List so as to ensure that it has been added to the simulator
+$ ls
+//To dump the VCD file
+$ ./a.out
+//To load the VCD file in GTKwaveform
+$ gtkwave tb_dff_asyncres.vcd
+```
+
+
 
 ### 3.3.1. Optimizations
 By this time we have already noticed that our behavioural description (RTL design) goes through optimizations. As an example from our previously discussed design- multiple_modules.v, the sub_module2 which synthesized to be an OR gate but ended up being somethig diffrent. It has been mapped to a cell- 'sky130_fd_sc_hd__lpflow_inputiso1p_1' by Yosys from the Liberty. These optimizations are performed by the synthesis tool minimizing area, power consumption etc. in perspective.  
 ![](assets/optimization_muliple_modules_1.png)  
+
+
+
+
+
+
+
