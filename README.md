@@ -40,6 +40,7 @@ In the digital circuit design, **register-transfer level (RTL)** is a design abs
 
 **Simulator**: It is a tool which is used for checking the design. In this workshop we are using **iverilog** tool.**Simulation** is the process of creating models that mimic the behavior of the device you are designing (simulation models) and creating models to exercise the device (test benches).
 **RTL Design**: It consists of an actual verilog code / a set of verilog codes that have the functionality to meet the required design specifications of the circuit.
+
 **Test Bench**: It is the setup to apply stimulus(test vectors) to design to checks its functionality.
 
 ### HOW SIMULATOR WORKS 
@@ -76,17 +77,17 @@ $ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 
 ### Simulation using iverilog simulator - 2:1 multiplexer rtl design
 
-# Verilog file of a simple 2:1 multiplexer
+#### Verilog file of a simple 2:1 multiplexer
 
 ![Screenshot (135)](https://user-images.githubusercontent.com/93824690/166143401-cb52b623-5095-45f4-b880-59b88e4c4bca.png)
 
 
-# GTKWAVE Analysis
+#### GTKWAVE Analysis
 
 ![Screenshot (142)](https://user-images.githubusercontent.com/93824690/166143969-6e8fb91c-fc09-4a8b-b779-5b45b834888c.png)
 
 
-# Access Module Files
+#### Access Module Files
 ```
 $ gvim tb_good_mux.v -o good_mux.v 
 ```
@@ -96,10 +97,10 @@ $ gvim tb_good_mux.v -o good_mux.v
 ## 1.3. Introduction to Yosys & Logic Synthesis
 
 **Synthesizer** is a tool for converting the **RTL** to Netlist and here we are using the **Yosys** Synthesizer.
-### Yosys SETUP
+#### Yosys SETUP
 ![Yosys](https://user-images.githubusercontent.com/93824690/166144581-f9888922-5b97-467b-bac8-42138d4c8a7e.png)
 
-### VERIFY THE SYNTHESIS
+#### VERIFY THE SYNTHESIS
 
 <img width="641" alt="verify the synthesis" src="https://user-images.githubusercontent.com/93824690/166144585-f308505e-2f1a-468f-aff4-673800445259.png">
 
@@ -130,13 +131,17 @@ A Constraint is a guidance file given to a synthesizer inorder to enable an opti
 
 ![Screen Shot 2021-09-02 at 12 16 52 AM](https://user-images.githubusercontent.com/89927660/131785975-bbc0c874-8b81-4f29-b892-3b279c7dbc6c.png)
 
-### 
+### Inference from Synthesis and Execution of netlist generation
 
 ![Screenshot (151)](https://user-images.githubusercontent.com/93824690/166145643-8430fe11-9020-44dc-b649-194343b4f955.png)
 
-
+### Synthesis by using show command
 
 ![Screenshot (153)](https://user-images.githubusercontent.com/93824690/166145665-dfcf9e19-d920-4819-bdcd-793b6209da5c.png)
+
+### Writing Netlist
+
+![Screenshot (157)](https://user-images.githubusercontent.com/93824690/166146410-42e93e44-0fba-4540-a819-95afff4e1b8b.png)
 
 
 # 3. Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
