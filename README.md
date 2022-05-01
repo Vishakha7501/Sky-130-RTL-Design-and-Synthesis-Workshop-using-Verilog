@@ -3,7 +3,7 @@
 
 
 Table of Contents
-- [Introduction](#1-introduction)
+ [Introduction](#1-introduction)
 - [1. Day 1 - Introduction to Verilog RTL design and Synthesis](#1-day-1---introduction-to-verilog-rtl-design-and-synthesis)
   - [1.1. Introduction to open source simulator iverilog](#11-introduction-to-open-source-simulator-iverilog)
     - [2.1.1. Simulation results](#211-simulation-results)
@@ -17,7 +17,7 @@ Table of Contents
   - [1.3. Introduction to Yosys and Logic Synthesis](#22-introduction-to-Yosys-and-Logic-Synthesis)
   - [1.4. Labs using Yosys and Sky130 PDKs](#22-labs-using-Yosys-and-Sky130-PDKs)
  - [2. Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](#2-day-2---timing-libs-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
-  - [2.1. Introduction to Timing .libs](#21-introduction- to-timing-.libs)
+  - [2.1. Introduction to Timing .libs](#21-introduction-to-timing-.libs)
     - [3.1.1. Sky130 Process Node](#311-sky130-process-node)
     - [3.1.2. Introduction to standard cell library](#312-introduction-to-standard-cell-library)
   - [3.2. Hierarchial synthesis vs Flat synthesis](#32-hierarchial-synthesis-vs-flat-synthesis)
