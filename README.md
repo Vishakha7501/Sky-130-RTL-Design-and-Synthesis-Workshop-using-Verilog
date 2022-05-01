@@ -3,7 +3,7 @@
 
 
 Table of Contents
- [Introduction](#1-introduction)
+-[Introduction](#1-introduction)
 - [1. Day 1 - Introduction to Verilog RTL design and Synthesis](#1-day-1---introduction-to-verilog-rtl-design-and-synthesis)
   - [1.1. Introduction to open source simulator iverilog](#11-introduction-to-open-source-simulator-iverilog)
     - [2.1.1. Simulation results](#211-simulation-results)
