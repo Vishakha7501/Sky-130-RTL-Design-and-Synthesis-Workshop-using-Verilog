@@ -45,7 +45,7 @@ In the digital circuit design, **register-transfer level (RTL)** is a design abs
 
 ### HOW SIMULATOR WORKS 
 **Simulator** looks for changes on input signals and based on that output is evaluated.
-![test bench](https://user-images.githubusercontent.com/93824690/166142807-b8b5a040-009f-4610-9691-cc3e5c53bbbe.png =250x250)
+![test bench](https://user-images.githubusercontent.com/93824690/166142807-b8b5a040-009f-4610-9691-cc3e5c53bbbe.png)
 
 **Design** may have 1 or more primary inputs and primary outputs but **TB** doesn't have.)
 
@@ -84,7 +84,7 @@ $ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 
 #### GTKWAVE Analysis
 
-![Screenshot (142)](https://user-images.githubusercontent.com/93824690/166143969-6e8fb91c-fc09-4a8b-b779-5b45b834888c.png)
+![Screenshot (142)](https://user-images.githubusercontent.com/93824690/166143969-6e8fb91c-fc09-4a8b-b779-5b45b834888c.png =250x250)
 
 
 #### Access Module Files
