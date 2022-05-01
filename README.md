@@ -30,43 +30,36 @@ Table of Contents
   - [5.4. for loop and for generate"](#54-for-loop-and-for-generate")
   - [5.5. Labs on "for loop" and "for generate"](#55-labs-on-"for-loop"-and-"for-generate")
 # Introduction
-This is a 5-day workshop from VSD-IAT on RTL design and synthesis using open source silicon toolchains involving iVerilog, GTKWave, Yosys with Sky130 technology.  
-This report is written as a part of final submission to summarize the 5-day journey through the workshop.
+The report is based on 5-day RTL Design and Synthesis in Verilog using the SKY130 Technolog workshop facilitated by VSD on using open source tools involving **iVerilog, GTKWave, Yosys** with **Sky130 technology**.  
+This workshop introduces to the digital logic design using Verilog HDL. Validating the functionality of the design using Functional Simulation. Writing Test Benches to validate the functionality of the RTL design .Logic synthesis of the Functional RTL Code. Gate Level Simulation of the Synthesized Netlist.
 
-# 2. Day 1 - Introduction to Verilog RTL design and Synthesis
-## 2.1. Introduction to Simulation
-**RTL design**: Register Transfer Level (RTL) is representation of a digital circuit at an abstract level. This abstract realization of a specification is achieved using HDLs like Verilog, VHDL etc in simple text form. Before the invention of RTL, digital engineers used to specify their desgins as schematic entry which could be tedious and error prone.  
+**SKY130** is the hardware industry's first open-source process design kit (PDK) released by SkyWater Technology Foundry in collaboration with Google giving all hardware design experts and aficionados, a worldwide access to their IP functions and open source ASICs. 
 
-**Simulation**: RTL design is checked for adherence to its specification using simulation. This helps finding and fixing bugs in the RTL design in the early stages of design development. iVerilog gives the framework to achieve this.
-iVerilog in short to [Icarus Verilog](http://iverilog.icarus.com/) is an open source toolchain for simulation and synthesis. Although it is used only for simulation due to it's potential advantages Yosys brings as a synthesis tool (*more details in later parts*). iVerilog frameowrk requires the RTL desgin file and a test bench file for simulation.  
+# 1. Day 1 - Introduction to Verilog RTL design and Synthesis
+## 1.1. Introduction to open source simulator iverilog
+In the digital circuit design, **register-transfer level (RTL)** is a design abstraction which models a synchronous digital circuit in terms of the data flow between hardware register, and the logical operations performed on those signals. RTL abstraction is used in HDL to create high-level representations of a circuit, from which lower-level representations and ultimately actual wiring can be derived.  
 
-A test bench file specifies stimulus to the input ports of the RTL design. This way the designer could verify the design for every change at its input ports, the change in the output. 
-The simulation output of iVerilog can be taken as a value change dump ('.vcd') file that could then be visualized in GTKWave.  
-[GTKWave](http://gtkwave.sourceforge.net/) is an open source tool for visualizing the signal dumps in .vcd/.lxt formats.  
+**Simulator**: It is a tool which is used for checking the design. In this workshop we are using **iverilog** tool.**Simulation** is the process of creating models that mimic the behavior of the device you are designing (simulation models) and creating models to exercise the device (test benches).
+**RTL Design**: It consists of an actual verilog code / a set of verilog codes that have the functionality to meet the required design specifications of the circuit.
+**Test Bench**: It is the setup to apply stimulus(test vectors) to design to checks its functionality.
 
-The below two figures illustrates the simulation in iVerilog and post-processing in GTKWave.  
-Test bench file performs the below  
-&emsp;&emsp;1. Instantiate the RTL design  
-&emsp;&emsp;2. Generate stimulus to the design inputs  
-&emsp;&emsp;3. To observe stimulus, dump the signals to .vcd file  
+### HOW SIMULATOR WORKS 
+Simulator looks for changes on input signals and based on that output is evaluated.
+![](test bench.png)
+(Design may have 1 or more primary inputs and primary outputs but TB doesn't have.)
+### SIMULATION FLOW
+![](iverilog based.png)
+(Simulator continuously checks for changes in the input. If there is an input change, the output is evaluated; else the simulator will never evaluate the output.)
 
-Simulation in iVerilog:  
-&emsp;&emsp;1. Takes RTL design and Test bench to perform simulation  
-&emsp;&emsp;2. Dump simulation signals to a .vcd file  
-
-Post-processing in GTKWave:  
-&emsp;&emsp;1. Takes the.vcd file and displays it as a waveform view for analysis.  
-
-![](assets/simulation.png)
-
-![](assets/gtkwave_view-iVerilog.drawio.png)
-
-### 2.1.1. Simulation results
-The workshop provided example RTL design for 1-bit two input mux ('good_mux.v') and it's corresponding test bench file. The design is simulated in iVerilog and the signals are visualised in GTKWave.  
-
-![](assets/iverilog_gtkwave_lab.png)
-
-## 2.2. Introduction to Synthesis
+## 1.2. Labs using iverilog & gtkwave
+ ###**ENVIRONMENT SETUP**
+ -create a directory 
+ $ mkdir VLSI
+ -git clone vsdflow
+ $ git clone https://github.com/kunalg123/vsdflow.git
+ -Git Clone sky130RTLDesignAndSynthesisWorkshop. 
+![](Screenshot (130).png) 
+(sky130RTLDesignAndSynthesisWorkshop Directory has: My_Lib - which contains all the necessary library files; where lib has the standard cell libraries to be used in synthesis and verilog_model with all standard cell verilog models for the standard cells present in the lib. Ther verilog_files folder contains all the experiments for lab sessions including both verilog code and test bench codes.)
 **Synthesis**: The RTL design description is translated into gate-level description by a synthesis tool. Very popular Open source synthesis tool [Yosys](http://bygone.clairexen.net/yosys/) is used for synthesis.  
 The synthesis tool takes the RTL desgin and the cell library (liberty file) as inputs and translates the RTL into netlist.
 Hence the netlist is the gate-level representation of the specifiec logic desgin via Verilog HDL in RTL.  
