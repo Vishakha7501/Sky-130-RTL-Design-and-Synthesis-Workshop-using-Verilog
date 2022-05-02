@@ -195,7 +195,7 @@ $ !gvim multiple_modules_hier.v
 **Multiple Modules:** - 2 SubModules
 **Staistics of Multiple Modules**
 
-<img width="200" alt="Screen Shot 2021-09-02 at 5 04 14 PM" src="https://user-images.githubusercontent.com/89927660/131922463-01b29515-c90d-4431-aa86-f10b15fa8d82.png">
+<img width="641" alt="Screenshot (165)" src="https://user-images.githubusercontent.com/93824690/166205646-1597fd0a-12e7-4244-b0a7-875b36e8366b.png">
 
 **Realization of the Logic**
 
@@ -203,7 +203,7 @@ $ !gvim multiple_modules_hier.v
 
 **Netlist file**
 
-<img width="400" height="700" alt="Screen Shot 2021-09-04 at 4 32 57 AM" src ="https://user-images.githubusercontent.com/89927660/132089951-73857fd9-aba8-40ac-b477-b316c8df5dc4.png">
+<img width="641" alt="Screenshot (168)" src="https://user-images.githubusercontent.com/93824690/166205875-e11616c0-01c5-4aee-a5a8-061646e8bbb7.png">
 
 #### Flat synthesis  
 
@@ -221,7 +221,7 @@ $ !gvim multiple_modules_flat.v
  
 **Netlist file**
 
-<img width="300" alt="Screen Shot 2021-09-02 at 6 10 30 PM" src="https://user-images.githubusercontent.com/89927660/131927406-1410346f-77bd-4fe0-a589-ffe2bf2f1a53.png">
+<img width="400" alt="Screen Shot 2021-09-02 at 6 10 30 PM" src="https://user-images.githubusercontent.com/89927660/131927406-1410346f-77bd-4fe0-a589-ffe2bf2f1a53.png">
 
 
 #### SUB MODULE LEVEL SYNTHESIS
