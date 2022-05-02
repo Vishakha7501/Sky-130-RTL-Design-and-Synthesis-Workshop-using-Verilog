@@ -408,11 +408,11 @@ Combinational circuits are defined as the time independent circuits which do not
 
 #### Types of Combinational Optimizations
 
--[Constant Propagation](#Constant-Propagation)
-  -[Direct Optimization Technique](#Direct-Optimization-Technique)
--[Boolean Logic Optimization](#Boolean-Logic-Optimization)
-  -[K-Map based](#K-Map-based)
-  -[Quine Mckluskey Algorithms(#Quine-Mckluskey-Algorithms)
+* Constant Propagation 
+	* Direct Optimization technique
+* Boolean Logic Optimization.
+	* Karnaugh map
+	* Quine Mckluskey
 
 #### CONSTANT PROPAGATION
 
@@ -440,13 +440,13 @@ y = a xor c
 
 #### Types of Sequential Optimizations
 
--[Basic](#Basic)
-  -[Sequential Constant Propagation](#Sequential-Constant-Propagation)
--[Advance](#Advance)
-  -[State Optimization](#State-Optimization)
-  -[Retiming](#Retiming)
-  -[Sequential Logic Cloning](#Sequential Logic Cloning)
-  
+* Basic Technique
+	* Sequential Constant Propagation
+* Advanced Technique
+	* State Optimization
+	* Retiming
+	* Sequential Logic cloning(Floorplan aware synthesis)
+	
 #### COMBINATIONAL LOGIC OPTIMIZATION  
 ```
 //to view all optimization files
@@ -470,27 +470,27 @@ $ show
 
 ##### (i)opt_check.v
 **_Expected logic from verilog file_**
-<img width="400" alt="Screenshot (287)" src="https://user-images.githubusercontent.com/93824690/166224225-7901ba26-b2dc-4076-95c8-8ee0bfc92247.png">
+<img width="641" alt 13" src="https://user-images.githubusercontent.com/93824690/166226904-de56d141-b404-403c-bf7f-ff5de15fe3c9.png">
 
 **_Command for constant propogation method_**
 <img width="400" alt="https://user-images.githubusercontent.com/93824690/166224442-e641857f-c064-494a-acc5-59aa3f12bf74.png">
 
 **_Realization of the Logic_**
-<img width="641" alt="Screenshot (206)" src"https://user-images.githubusercontent.com/93824690/166224940-a557c7c1-5e43-4dc1-8776-136b8c21aa2a.png">
+<img width="641" alt="Screenshot (206)" src="https://user-images.githubusercontent.com/93824690/166224940-a557c7c1-5e43-4dc1-8776-136b8c21aa2a.png">
 
 ##### (ii)opt_check2.v
 **_Expected logic from verilog file_**
 
 
 **_Realization of the Logic_**
-<img width="641" alt="Screenshot (208)" src"https://user-images.githubusercontent.com/93824690/166224954-5bc8b24c-a42a-456a-a1c8-e6d77d127ab9.png">
+<img width="641" alt="Screenshot (208)" src="https://user-images.githubusercontent.com/93824690/166224954-5bc8b24c-a42a-456a-a1c8-e6d77d127ab9.png">
 
 ##### (iii)opt_check3.v
 **_Expected logic from verilog file_**
 
 
 **_Realization of the Logic_**
-<img width="641" alt="Screenshot (209)" src"https://user-images.githubusercontent.com/93824690/166224962-c2c38237-33f0-400e-afdf-867eddb8235b.png">
+<img width="641" alt="Screenshot (209)" src="https://user-images.githubusercontent.com/93824690/166224962-c2c38237-33f0-400e-afdf-867eddb8235b.png">
 
 ##### (iv)opt_check4.v
 **_Expected logic from verilog file_**
