@@ -312,27 +312,27 @@ $ !gvim dff_asyncres_ff.v
 ```
 **Statistics of D FLipflop with Asynchronous Reset**
 
-<img width="641" alt="Screenshot (185)" src="https://user-images.githubusercontent.com/93824690/166207965-d6027bd0-b4be-4bd9-9e98-fff90892aae3.png">
+<img width="400" alt="Screenshot (185)" src="https://user-images.githubusercontent.com/93824690/166207965-d6027bd0-b4be-4bd9-9e98-fff90892aae3.png">
 
 **Realization of Logic**
 
-<img width="641" alt="Screenshot (187)" src="https://user-images.githubusercontent.com/93824690/166208007-645ed477-f0cf-4af2-a6dc-0c692498d26d.png">
+<img width="700" alt="Screenshot (187)" src="https://user-images.githubusercontent.com/93824690/166208007-645ed477-f0cf-4af2-a6dc-0c692498d26d.png">
 
 **Statistics of D FLipflop with Asynchronous set**
 
-<img width="641" alt="Screenshot (188)" src="https://user-images.githubusercontent.com/93824690/166207987-427e675c-d2d2-4677-949f-5eb27b18ce03.png">
+<img width="400" alt="Screenshot (188)" src="https://user-images.githubusercontent.com/93824690/166207987-427e675c-d2d2-4677-949f-5eb27b18ce03.png">
 
 **Realization of Logic**
 
-<img width="641" alt="Screenshot (189)" src="https://user-images.githubusercontent.com/93824690/166208020-8054aabb-5e98-424f-87cb-5ea69d9962ea.png">
+<img width="700" alt="Screenshot (189)" src="https://user-images.githubusercontent.com/93824690/166208020-8054aabb-5e98-424f-87cb-5ea69d9962ea.png">
 
 **Statistics of D FLipflop with Synchronous Reset**
 
-<img width="641" alt="Screenshot (190)" src="https://user-images.githubusercontent.com/93824690/166209133-d0fef1ae-39d3-43e3-8ab3-25d746b881a1.png">
+<img width="400" alt="Screenshot (190)" src="https://user-images.githubusercontent.com/93824690/166209133-d0fef1ae-39d3-43e3-8ab3-25d746b881a1.png">
 
 **Realization of Logic**
 
-<img width="641" alt="Screenshot (191)" src="https://user-images.githubusercontent.com/93824690/166209147-347c8784-a4e8-44fe-bf08-19c9b9b6e3c6.png">
+<img width="700" alt="Screenshot (191)" src="https://user-images.githubusercontent.com/93824690/166209147-347c8784-a4e8-44fe-bf08-19c9b9b6e3c6.png">
 
 
 
