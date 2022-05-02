@@ -254,21 +254,21 @@ Every flop element needs an initial state, else the combinational circuit will e
 
 #### _Asynchronous Reset/Set:_
 
-<img width="700" alt="Screen Shot 2021-09-02 at 10 11 42 PM" src="https://user-images.githubusercontent.com/89927660/131946717-7cdd0aeb-369a-4ade-b6d2-b9b7fc51b13e.png">
+<img width="641" alt="Aset" src="https://user-images.githubusercontent.com/93824690/166290793-db957126-074e-4036-a224-4bd71c4ee38a.png">
 
-<img width="700" alt="Screen Shot 2021-09-02 at 10 16 12 PM" src="https://user-images.githubusercontent.com/89927660/131947092-dd26c7ca-25c2-48d0-9841-d9e0ad5d5a66.png">
+<img width="641" alt="Aset2" src="https://user-images.githubusercontent.com/93824690/166290797-81e1f637-55bc-4e8b-b24b-3aeaa6e7e848.png">
 
 
 >_ Here, always block gets evaluated when there is a change in the clock or change in the set/reset.The circuit is sensitive to positive edge of the clock. Upon the signal going low/high depending on reset or set control, singal q line goes changes respectively. Hence, it does not wait for the positive edge of the clock and happens irrespective of the clock_.
 
 #### _Synchronous Reset:_
 
-<img width="641" alt="Screen Shot 2021-09-02 at 10 19 42 PM" src="https://user-images.githubusercontent.com/89927660/131946706-2222f473-89bc-4a2a-85df-3ffb0c01e77e.png">
+<img width="641" alt="syn 1" src="https://user-images.githubusercontent.com/93824690/166290831-db5d6a70-d4d3-4cd1-b8be-01db5fb1fe2f.png">
 
 
 #### _Both Synchronous and Asynchronous Reset:_
 
-<img width="700" alt="Screen Shot 2021-09-02 at 10 28 38 PM" src="https://user-images.githubusercontent.com/89927660/131946998-d79712a6-2c72-44ae-95c2-596372b3365c.png">
+<img width="641" alt="both" src="https://user-images.githubusercontent.com/93824690/166290817-8e06a04d-df32-4ce4-9eb1-8d5490036e36.png">
 
 
 #### FLIP FLOP SIMULATION
