@@ -61,14 +61,14 @@ In the digital circuit design, **register-transfer level (RTL)** is a design abs
  
 #### ENVIRONMENT SETUP
 
-``
+```
 //create a directory
 $ mkdir VLSI 
 //Git Clone vsdflow. 
 $ git clone https://github.com/kunalg123/vsdflow.git
 //Git Clone sky130RTLDesignAndSynthesisWorkshop. 
 $ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
-``
+```
 <img width="641" alt="Screenshot (130)" src="https://user-images.githubusercontent.com/93824690/166142874-66d2c8f4-0fc5-4a82-91ae-b3821f08f56e.png"> 
  
 **sky130RTLDesignAndSynthesisWorkshop** Directory has: My_Lib - which contains all the necessary library files; where lib has the standard cell libraries to be used in synthesis and verilog_model with all standard cell verilog models for the standard cells present in the lib. Ther verilog_files folder contains all the experiments for lab sessions including both verilog code and test bench codes.
@@ -77,7 +77,7 @@ _We are given a default set of files and libraries shown below to work on using 
 
 <img width="641" alt="Screenshot (134)" src="https://user-images.githubusercontent.com/93824690/166143655-b00175e1-864b-4aac-8c3c-a4f72e388351.png">
 
-#### Simulation using iverilog simulator - 2:1 multiplexer rtl design
+### Simulation using iverilog simulator - 2:1 multiplexer rtl design
 
 #### VERILOG FILE OF A SIMPLE 2:1 MUX
 
@@ -90,9 +90,9 @@ _We are given a default set of files and libraries shown below to work on using 
 
 
 #### Access Module Files
-``
+```
 $ gvim tb_good_mux.v -o good_mux.v 
-``
+```
 
 <img width="641" alt="Screen Shot 2021-09-02 at 12 23 28 AM" src="https://user-images.githubusercontent.com/89927660/131786618-c6d4663f-5375-48dc-aa16-46b70e6797da.png">
 
@@ -147,14 +147,14 @@ A Constraint is a guidance file given to a synthesizer inorder to enable an opti
 
 ## 2. Day 2 - Timing Libs, Hierarchial Vs Flat Synthesis and Efficient Flop Coding Styles
 ### 2.1. Introduction to timing labs
-``
+```
 __Command to open the libary file
 $ gvim ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 __To shut off the background colors/ syntax off:
 : syn off
 __To enable the line numbers
 : se nu
-``
+```
 #### Library file
 
 <img width="641" alt="Screenshot (150)" src="https://user-images.githubusercontent.com/93824690/166147361-8f538de7-24d2-410e-81c2-832710298c5a.png">
@@ -173,7 +173,7 @@ For a design to work, there are three important parameters that determines how t
 ### 2.2. Hierarchial synthesis vs Flat synthesis 
 
 #### Hierarchial synthesis  
-``
+````
 _Opening the file used for this experiment
 $ gvim multiple_modules.v
 _Invoke Yosys
@@ -191,7 +191,7 @@ $ show multiple_modules
 _Writing the netlist in a crisp manner 
 $ write_verilog -noattr multiple_modules_hier.v
 $ !gvim multiple_modules_hier.v
-``
+````
 **Multiple Modules:** - 2 SubModules
 **Staistics of Multiple Modules**
 
@@ -207,13 +207,13 @@ $ !gvim multiple_modules_hier.v
 
 #### Flat synthesis  
 
-``
+```
 _To flatten the netlist
 $ flatten
 _Writing the netlist in a crisp manner and to view it
 $ write_verilog -noattr multiple_modules_flat.v
 $ !gvim multiple_modules_flat.v
-``
+```
 **Realization of the Logic**
 
 <img width="641" alt="Screen Shot 2021-09-02 at 6 14 16 PM" src="https://user-images.githubusercontent.com/89927660/131927662-d25c4d37-c0c1-41a7-ab14-9399840eb3ee.png">
