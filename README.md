@@ -167,7 +167,7 @@ For a design to work, there are three important parameters that determines how t
 
 #### Various Flavours of AND Cell
 
-<img width="700" alt="Screenshot (163)" src="https://user-images.githubusercontent.com/93824690/166147855-692033f0-08e1-465f-98b6-5a9fba6a3eb0.png">
+<img width="750" alt="Screenshot (163)" src="https://user-images.githubusercontent.com/93824690/166147855-692033f0-08e1-465f-98b6-5a9fba6a3eb0.png">
 
 
 ### 2.2. Hierarchial synthesis vs Flat synthesis 
@@ -199,11 +199,11 @@ $ !gvim multiple_modules_hier.v
 
 **Realization of the Logic**
 
-<img width="700" alt="Screen Shot 2021-09-02 at 5 12 46 PM" src="https://user-images.githubusercontent.com/89927660/131923051-5d882430-fa4a-4b0d-8b70-0857c58f9b34.png">
+<img width="500" alt="Screen Shot 2021-09-02 at 5 12 46 PM" src="https://user-images.githubusercontent.com/89927660/131923051-5d882430-fa4a-4b0d-8b70-0857c58f9b34.png">
 
 **Netlist file**
 
-<img width="700" alt="Screen Shot 2021-09-04 at 4 32 57 AM" src ="https://user-images.githubusercontent.com/89927660/132089951-73857fd9-aba8-40ac-b477-b316c8df5dc4.png">
+<img width="300" alt="Screen Shot 2021-09-04 at 4 32 57 AM" src ="https://user-images.githubusercontent.com/89927660/132089951-73857fd9-aba8-40ac-b477-b316c8df5dc4.png">
 
 #### Flat synthesis  
 
@@ -216,12 +216,12 @@ $ !gvim multiple_modules_flat.v
 ```
 **Realization of the Logic**
 
-<img width="700" alt="Screen Shot 2021-09-02 at 6 14 16 PM" src="https://user-images.githubusercontent.com/89927660/131927662-d25c4d37-c0c1-41a7-ab14-9399840eb3ee.png">
+<img width="750" alt="Screen Shot 2021-09-02 at 6 14 16 PM" src="https://user-images.githubusercontent.com/89927660/131927662-d25c4d37-c0c1-41a7-ab14-9399840eb3ee.png">
   
  
 **Netlist file**
 
-<img width="700" alt="Screen Shot 2021-09-02 at 6 10 30 PM" src="https://user-images.githubusercontent.com/89927660/131927406-1410346f-77bd-4fe0-a589-ffe2bf2f1a53.png">
+<img width="300" alt="Screen Shot 2021-09-02 at 6 10 30 PM" src="https://user-images.githubusercontent.com/89927660/131927406-1410346f-77bd-4fe0-a589-ffe2bf2f1a53.png">
 
 
 #### SUB MODULE LEVEL SYNTHESIS
@@ -230,7 +230,7 @@ Sub-module level synthesis is preferred when there are multiple instances of sam
 
 **Statistics of Sub-module**
 
-<img width="500" alt="Screen Shot 2021-09-02 at 9 11 28 PM" src="https://user-images.githubusercontent.com/89927660/131940332-d8272cc3-affb-471d-9dd0-1ad951d86c22.png">
+<img width="300" alt="Screen Shot 2021-09-02 at 9 11 28 PM" src="https://user-images.githubusercontent.com/89927660/131940332-d8272cc3-affb-471d-9dd0-1ad951d86c22.png">
 
 **Graphical Realization of the Logic**
 
@@ -238,7 +238,7 @@ Sub-module level synthesis is preferred when there are multiple instances of sam
 
 **NetList File of Sub-module**
 
-<img width="500" alt="Screen Shot 2021-09-02 at 9 13 33 PM" src="https://user-images.githubusercontent.com/89927660/131940384-c0bf6a0a-a73c-4c99-95a4-84a7a654e774.pn">)
+<img width="300" alt="Screen Shot 2021-09-02 at 9 13 33 PM" src="https://user-images.githubusercontent.com/89927660/131940384-c0bf6a0a-a73c-4c99-95a4-84a7a654e774.png">
 
 
 ### 2.3. Various Flop coding styles and optimization
@@ -248,22 +248,22 @@ In a digital design, when an input signal changes state, the output changes afte
 A D flip-flop is a sequential element that follows the input pin d at the clock's given edge. D flip-flop is a fundamental component in digital logic circuits.
 There are two types of D Flip-Flops being implemented: Rising-Edge D Flip Flop and Falling-Edge D Flip Flop.
 
-<img width="500" alt="fe verilog-d-flip-flop" src="https://user-images.githubusercontent.com/93824690/166153680-a44e9aa1-4056-4cfe-8a09-a096e3da9dc1.png">
+<img width="400" alt="fe verilog-d-flip-flop" src="https://user-images.githubusercontent.com/93824690/166153680-a44e9aa1-4056-4cfe-8a09-a096e3da9dc1.png">
 
 Every flop element needs an initial state, else the combinational circuit will evaluate to a garbage value. In order to achieve this, there are control pins in the flop namely: Set and Reset which can either be Synchronous or Asynchronous. 
 
 #### _Asynchronous Reset/Set:_
 
-<img width="500" alt="Screen Shot 2021-09-02 at 10 11 42 PM" src="https://user-images.githubusercontent.com/89927660/131946717-7cdd0aeb-369a-4ade-b6d2-b9b7fc51b13e.png">
+<img width="641" alt="Screen Shot 2021-09-02 at 10 11 42 PM" src="https://user-images.githubusercontent.com/89927660/131946717-7cdd0aeb-369a-4ade-b6d2-b9b7fc51b13e.png">
 
-<img width="500" alt="Screen Shot 2021-09-02 at 10 16 12 PM" src="https://user-images.githubusercontent.com/89927660/131947092-dd26c7ca-25c2-48d0-9841-d9e0ad5d5a66.png">
+<img width="641" alt="Screen Shot 2021-09-02 at 10 16 12 PM" src="https://user-images.githubusercontent.com/89927660/131947092-dd26c7ca-25c2-48d0-9841-d9e0ad5d5a66.png">
 
 
 >_ Here, always block gets evaluated when there is a change in the clock or change in the set/reset.The circuit is sensitive to positive edge of the clock. Upon the signal going low/high depending on reset or set control, singal q line goes changes respectively. Hence, it does not wait for the positive edge of the clock and happens irrespective of the clock_.
 
 #### _Synchronous Reset:_
 
-<img width="500" alt="Screen Shot 2021-09-02 at 10 19 42 PM" src="https://user-images.githubusercontent.com/89927660/131946706-2222f473-89bc-4a2a-85df-3ffb0c01e77e.png">
+<img width="641" alt="Screen Shot 2021-09-02 at 10 19 42 PM" src="https://user-images.githubusercontent.com/89927660/131946706-2222f473-89bc-4a2a-85df-3ffb0c01e77e.png">
 
 
 #### _Both Synchronous and Asynchronous Reset:_
