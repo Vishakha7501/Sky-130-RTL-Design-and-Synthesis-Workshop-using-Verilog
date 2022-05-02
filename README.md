@@ -1,5 +1,5 @@
 # RTL Design and Synthesis in Verilog using Sky130 Technology <!-- omit in toc -->
-<img width="683" alt="VSD_Workshop_Detail" src="https://user-images.githubusercontent.com/93824690/166194735-0f0b80b3-6f14-4d76-8929-c3052b3aa3df.png">
+<img width="750" alt="VSD_Workshop_Detail" src="https://user-images.githubusercontent.com/93824690/166194735-0f0b80b3-6f14-4d76-8929-c3052b3aa3df.png">
 
 
 
