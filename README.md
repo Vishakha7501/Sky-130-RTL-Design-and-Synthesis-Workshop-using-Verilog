@@ -516,9 +516,10 @@ $ show
 <img width="400" alt="opt check 4 mo" src="https://user-images.githubusercontent.com/93824690/166228431-140351df-3af6-4664-bf41-1cb1c04a12ce.png">
 
 >_The value of y depends on a, y = a'c + ac_
+
 **_Realization of the Logic_**
 
-<img width="400" alt="opt check 4" src="https://user-images.githubusercontent.com/93824690/166228436-ed297d9d-c379-41c1-add5-913614b9540e.png">
+<img width="641" alt="opt check 4" src="https://user-images.githubusercontent.com/93824690/166228436-ed297d9d-c379-41c1-add5-913614b9540e.png">
 
 >_optimized graphical realization thus shows A XNOR C gate being implemented._
 
@@ -564,18 +565,95 @@ $ show
 
 <img width="400" alt="const1 gtkwave" src="https://user-images.githubusercontent.com/93824690/166229663-62940883-a7d8-4948-8500-846e3adba739.png">
 
+**_Statistics showing a flop inferred_**
+
+<img width="400" alt="Screenshot (217)" src="https://user-images.githubusercontent.com/93824690/166231858-6c8328e6-75d7-4c49-b7de-dfa40a785b6c.png">
+																		  
+**_Realization of Logic_**																	
+
+<img width="400" alt="Screenshot (216)" src="https://user-images.githubusercontent.com/93824690/166231848-275be7b7-7123-44f9-af20-99045cbaf5bd.png">
+
+>_The optimized graphical realization thus shows the flop inferred. Also, the design code has active high reset and the standard cell library has active low reset - so, there is a presence of inverter for the reset._
+
+#### (ii)dff_const2.v
+
+**_Expected logic from verilog file_**
+
+<img width="400" alt="const2 mo" src="https://user-images.githubusercontent.com/93824690/166232931-87c503db-5670-4fe2-a2cc-d04e3b093323.png">
+
 **_GTK Wave_**
 
+<img width="400" alt="const 2 gtk" src= "https://user-images.githubusercontent.com/93824690/166233155-e111c609-f9ca-4241-88e0-784ca36fcd73.png">
+
+**_Statistics showing a flop inferred_**
+
+<img width="400" alt="Screenshot (218)" src="https://user-images.githubusercontent.com/93824690/166231886-062ff0e3-8ae5-44ed-9b5f-1ede18846654.png">
+
+**_Realization of Logic_**
+
+<img width="400" alt="Screenshot (219)" src="https://user-images.githubusercontent.com/93824690/166231903-de4a3bdd-362c-4b62-8d7f-4c882dac6b3c.png">
+
+#### (iii)dff_const3.v
+
+**_Expected logic from verilog file_**
+
+<img width="400" alt="const3 mo" src="https://user-images.githubusercontent.com/93824690/166234186-4880afe5-907c-478c-9431-7ceabe36f776.png">
 
 
+**_GTK Wave_**
+
+<img width="400" alt="Screenshot (221)" src="https://user-images.githubusercontent.com/93824690/166231920-517d7982-bef0-4684-995b-36a7431c5192.png">
+
+**_Statistics showing a flop inferred_**
+
+<img width="400" alt="const 3 st" src="https://user-images.githubusercontent.com/93824690/166234729-d271f40f-51a9-4f00-a8c6-45b3056db776.png">
+																		  
+**_Realization of Logic_**
+
+<img width="400" alt="Screenshot (223)" src="https://user-images.githubusercontent.com/93824690/166231948-45a94b52-e593-4128-8958-ec4157806351.png">
 
 
+																		 
+																		 
+#### (iv)dff_const4.v
+
+**_Expected logic from verilog file_**
+
+<img width="400" alt="const 4 mo" src="https://user-images.githubusercontent.com/93824690/166235278-42609662-e9d2-4ff7-bb89-b4791aec301a.png">
+
+**_GTK Wave_**
+
+<img width="400" alt="const 4 gtk" src="https://user-images.githubusercontent.com/93824690/166235397-a216da63-c9f9-4df5-a583-471885306443.png">
+
+**_Statistics showing a flop inferred_**
+
+<img width="400" alt="const4 st" src="https://user-images.githubusercontent.com/93824690/166235523-fa43d8ad-be63-4a55-ba2c-1ea5fee035fb.png">
+
+									
+**_Realization of Logic_**
+
+<img width="400" alt="const4 re" src="https://user-images.githubusercontent.com/93824690/166235601-3dd5590c-f1a1-419c-ac3b-afe660630354.png">
 
 
+#### (v)dff_const5.v
+
+**_Expected logic from verilog file_**
+
+<img width="400" alt="const5 mo" src="https://user-images.githubusercontent.com/93824690/166235678-4c4040e4-19af-48a6-9817-606cb1f3390d.png">
 
 
+**_GTK Wave_**
 
+<img width="400" alt="const 5 gtk" src="https://user-images.githubusercontent.com/93824690/166235800-81062051-7b67-419f-b40a-67b4b7fc6ea3.png">
 
+**_Statistics showing a flop inferred_**
+
+<img width="400" alt="const5 st" src="https://user-images.githubusercontent.com/93824690/166235889-7fe5effa-676a-44a9-9acd-b829fe01816f.png">
+
+						
+**_Realization of Logic_**
+
+<img width="400" alt="const 5 re" src="https://user-images.githubusercontent.com/93824690/166235967-b31ef6b1-dbb0-4cd7-8705-78bb3c4b8d20.png">
 
 
 
