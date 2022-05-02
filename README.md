@@ -163,11 +163,11 @@ __To enable the line numbers
 
 For a design to work, there are three important parameters that determines how the Silicon works: Process (Variations due to Fabrications), Voltage (Changes in the behavior of the circuit) and Temperature (Sensitivity of semiconductors). Libraries are characterized to model these variations. 
 
-<img width="400" alt="Screenshot (162)" src="https://user-images.githubusercontent.com/93824690/166147849-14fa3eaf-0ca9-440c-bbe8-7b52f6cd682e.png">
+<img width="500" alt="Screenshot (162)" src="https://user-images.githubusercontent.com/93824690/166147849-14fa3eaf-0ca9-440c-bbe8-7b52f6cd682e.png">
 
 #### Various Flavours of AND Cell
 
-<img width="700" alt="Screenshot (163)" src="https://user-images.githubusercontent.com/93824690/166147855-692033f0-08e1-465f-98b6-5a9fba6a3eb0.png">
+<img width="600" alt="Screenshot (163)" src="https://user-images.githubusercontent.com/93824690/166147855-692033f0-08e1-465f-98b6-5a9fba6a3eb0.png">
 
 
 ### 2.2. Hierarchial synthesis vs Flat synthesis 
@@ -195,15 +195,15 @@ $ !gvim multiple_modules_hier.v
 **Multiple Modules:** - 2 SubModules
 **Staistics of Multiple Modules**
 
-<img width="400" alt="Screen Shot 2021-09-02 at 5 04 14 PM" src="https://user-images.githubusercontent.com/89927660/131922463-01b29515-c90d-4431-aa86-f10b15fa8d82.png">
+<img width="700" alt="Screen Shot 2021-09-02 at 5 04 14 PM" src="https://user-images.githubusercontent.com/89927660/131922463-01b29515-c90d-4431-aa86-f10b15fa8d82.png">
 
 **Realization of the Logic**
 
-<img width="500" alt="Screen Shot 2021-09-02 at 5 12 46 PM" src="https://user-images.githubusercontent.com/89927660/131923051-5d882430-fa4a-4b0d-8b70-0857c58f9b34.png">
+<img width="700" alt="Screen Shot 2021-09-02 at 5 12 46 PM" src="https://user-images.githubusercontent.com/89927660/131923051-5d882430-fa4a-4b0d-8b70-0857c58f9b34.png">
 
 **Netlist file**
 
-<img width="400" alt="Screen Shot 2021-09-04 at 4 32 57 AM" src ="https://user-images.githubusercontent.com/89927660/132089951-73857fd9-aba8-40ac-b477-b316c8df5dc4.png">
+<img width="700" alt="Screen Shot 2021-09-04 at 4 32 57 AM" src ="https://user-images.githubusercontent.com/89927660/132089951-73857fd9-aba8-40ac-b477-b316c8df5dc4.png">
 
 #### Flat synthesis  
 
@@ -221,7 +221,7 @@ $ !gvim multiple_modules_flat.v
  
 **Netlist file**
 
-<img width="641" alt="Screen Shot 2021-09-02 at 6 10 30 PM" src="https://user-images.githubusercontent.com/89927660/131927406-1410346f-77bd-4fe0-a589-ffe2bf2f1a53.png">
+<img width="700" alt="Screen Shot 2021-09-02 at 6 10 30 PM" src="https://user-images.githubusercontent.com/89927660/131927406-1410346f-77bd-4fe0-a589-ffe2bf2f1a53.png">
 
 
 #### SUB MODULE LEVEL SYNTHESIS
