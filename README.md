@@ -3,7 +3,7 @@
 
 
 
-##Table of Contents
+## Table of Contents
 - [Introduction](#-introduction)
 - [1. Day 1 - Introduction to Verilog RTL design and Synthesis](#1-day-1---introduction-to-verilog-rtl-design-and-synthesis)
   - [1.1. Introduction to open source simulator iverilog](#11-introduction-to-open-source-simulator-iverilog)
@@ -35,6 +35,7 @@ This workshop introduces to the digital logic design using Verilog HDL. Validati
 
 **SKY130** is the hardware industry's first open-source process design kit (PDK) released by SkyWater Technology Foundry in collaboration with Google giving all hardware design experts and aficionados, a worldwide access to their IP functions and open source ASICs. 
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## 1. Day 1 - Introduction to Verilog RTL design and Synthesis
 ### 1.1. Introduction to open source simulator iverilog
 In the digital circuit design, **register-transfer level (RTL)** is a design abstraction which models a synchronous digital circuit in terms of the data flow between hardware register, and the logical operations performed on those signals. RTL abstraction is used in HDL to create high-level representations of a circuit, from which lower-level representations and ultimately actual wiring can be derived.  
@@ -144,6 +145,8 @@ A Constraint is a guidance file given to a synthesizer inorder to enable an opti
 #### Writing Netlist
 
 <img width="641" alt="Screenshot (157)" src="https://user-images.githubusercontent.com/93824690/166146410-42e93e44-0fba-4540-a819-95afff4e1b8b.png">
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 
 ## 2. Day 2 - Timing Libs, Hierarchial Vs Flat Synthesis and Efficient Flop Coding Styles
 ### 2.1. Introduction to timing labs
