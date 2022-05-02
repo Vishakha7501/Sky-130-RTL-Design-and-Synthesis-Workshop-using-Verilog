@@ -195,7 +195,7 @@ $ !gvim multiple_modules_hier.v
 **Multiple Modules:** - 2 SubModules
 **Staistics of Multiple Modules**
 
-<img width="300" alt="Screen Shot 2021-09-02 at 5 04 14 PM" src="https://user-images.githubusercontent.com/89927660/131922463-01b29515-c90d-4431-aa86-f10b15fa8d82.png">
+<img width="500" alt="Screen Shot 2021-09-02 at 5 04 14 PM" src="https://user-images.githubusercontent.com/89927660/131922463-01b29515-c90d-4431-aa86-f10b15fa8d82.png">
 
 **Realization of the Logic**
 
@@ -203,7 +203,7 @@ $ !gvim multiple_modules_hier.v
 
 **Netlist file**
 
-<img width="300" alt="Screen Shot 2021-09-04 at 4 32 57 AM" src ="https://user-images.githubusercontent.com/89927660/132089951-73857fd9-aba8-40ac-b477-b316c8df5dc4.png">
+<img width="500" alt="Screen Shot 2021-09-04 at 4 32 57 AM" src ="https://user-images.githubusercontent.com/89927660/132089951-73857fd9-aba8-40ac-b477-b316c8df5dc4.png">
 
 #### Flat synthesis  
 
@@ -216,12 +216,12 @@ $ !gvim multiple_modules_flat.v
 ```
 **Realization of the Logic**
 
-<img width="750" alt="Screen Shot 2021-09-02 at 6 14 16 PM" src="https://user-images.githubusercontent.com/89927660/131927662-d25c4d37-c0c1-41a7-ab14-9399840eb3ee.png">
+<img width="1000" alt="Screen Shot 2021-09-02 at 6 14 16 PM" src="https://user-images.githubusercontent.com/89927660/131927662-d25c4d37-c0c1-41a7-ab14-9399840eb3ee.png">
   
  
 **Netlist file**
 
-<img width="300" alt="Screen Shot 2021-09-02 at 6 10 30 PM" src="https://user-images.githubusercontent.com/89927660/131927406-1410346f-77bd-4fe0-a589-ffe2bf2f1a53.png">
+<img width="500" alt="Screen Shot 2021-09-02 at 6 10 30 PM" src="https://user-images.githubusercontent.com/89927660/131927406-1410346f-77bd-4fe0-a589-ffe2bf2f1a53.png">
 
 
 #### SUB MODULE LEVEL SYNTHESIS
@@ -254,9 +254,9 @@ Every flop element needs an initial state, else the combinational circuit will e
 
 #### _Asynchronous Reset/Set:_
 
-<img width="641" alt="Screen Shot 2021-09-02 at 10 11 42 PM" src="https://user-images.githubusercontent.com/89927660/131946717-7cdd0aeb-369a-4ade-b6d2-b9b7fc51b13e.png">
+<img width="700" alt="Screen Shot 2021-09-02 at 10 11 42 PM" src="https://user-images.githubusercontent.com/89927660/131946717-7cdd0aeb-369a-4ade-b6d2-b9b7fc51b13e.png">
 
-<img width="641" alt="Screen Shot 2021-09-02 at 10 16 12 PM" src="https://user-images.githubusercontent.com/89927660/131947092-dd26c7ca-25c2-48d0-9841-d9e0ad5d5a66.png">
+<img width="700" alt="Screen Shot 2021-09-02 at 10 16 12 PM" src="https://user-images.githubusercontent.com/89927660/131947092-dd26c7ca-25c2-48d0-9841-d9e0ad5d5a66.png">
 
 
 >_ Here, always block gets evaluated when there is a change in the clock or change in the set/reset.The circuit is sensitive to positive edge of the clock. Upon the signal going low/high depending on reset or set control, singal q line goes changes respectively. Hence, it does not wait for the positive edge of the clock and happens irrespective of the clock_.
@@ -268,7 +268,7 @@ Every flop element needs an initial state, else the combinational circuit will e
 
 #### _Both Synchronous and Asynchronous Reset:_
 
-<img width="641" alt="Screen Shot 2021-09-02 at 10 28 38 PM" src="https://user-images.githubusercontent.com/89927660/131946998-d79712a6-2c72-44ae-95c2-596372b3365c.png">
+<img width="700" alt="Screen Shot 2021-09-02 at 10 28 38 PM" src="https://user-images.githubusercontent.com/89927660/131946998-d79712a6-2c72-44ae-95c2-596372b3365c.png">
 
 
 #### FLIP FLOP SIMULATION
