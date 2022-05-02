@@ -3,7 +3,7 @@
 
 
 
-Table of Contents
+##Table of Contents
 - [Introduction](#-introduction)
 - [1. Day 1 - Introduction to Verilog RTL design and Synthesis](#1-day-1---introduction-to-verilog-rtl-design-and-synthesis)
   - [1.1. Introduction to open source simulator iverilog](#11-introduction-to-open-source-simulator-iverilog)
@@ -35,8 +35,8 @@ This workshop introduces to the digital logic design using Verilog HDL. Validati
 
 **SKY130** is the hardware industry's first open-source process design kit (PDK) released by SkyWater Technology Foundry in collaboration with Google giving all hardware design experts and aficionados, a worldwide access to their IP functions and open source ASICs. 
 
-# 1. Day 1 - Introduction to Verilog RTL design and Synthesis
-## 1.1. Introduction to open source simulator iverilog
+## 1. Day 1 - Introduction to Verilog RTL design and Synthesis
+### 1.1. Introduction to open source simulator iverilog
 In the digital circuit design, **register-transfer level (RTL)** is a design abstraction which models a synchronous digital circuit in terms of the data flow between hardware register, and the logical operations performed on those signals. RTL abstraction is used in HDL to create high-level representations of a circuit, from which lower-level representations and ultimately actual wiring can be derived.  
 
 **Simulator**: It is a tool which is used for checking the design. In this workshop we are using **iverilog** tool.**Simulation** is the process of creating models that mimic the behavior of the device you are designing (simulation models) and creating models to exercise the device (test benches).
@@ -50,14 +50,14 @@ In the digital circuit design, **register-transfer level (RTL)** is a design abs
 
 **Design** may have 1 or more primary inputs and primary outputs but **TB** doesn't have.)
 
- ### SIMULATION FLOW
+ #### SIMULATION FLOW
 ![iverilog based](https://user-images.githubusercontent.com/93824690/166142840-4d8a8377-526c-444e-9498-dc76068046fc.png)
 
 **Simulator** continuously checks for changes in the input. If there is an input change, the output is evaluated; else the simulator will never evaluate the output.
 
-## 1.2. Labs using iverilog & gtkwave
+### 1.2. Labs using iverilog & gtkwave
  
- ### ENVIRONMENT SETUP
+ #### ENVIRONMENT SETUP
 
 ```
 #Steps Followed:
