@@ -656,6 +656,88 @@ $ show
 <img width="400" alt="const 5 re" src="https://user-images.githubusercontent.com/93824690/166235967-b31ef6b1-dbb0-4cd7-8705-78bb3c4b8d20.png">
 
 
+#### SEQUENTIAL UNUSED OUTPUT OPTIMIZATION
+```
+//Steps Followed for each of the unused output optimization problems:
+//opening the file
+$ gvim counter_opt.v
+//Invoke Yosys
+$ yosys
+//Read library 
+$ read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+//Read Design
+$ read_verilog opt_check.v
+//Synthesize Design - this controls which module to synthesize
+$ synth -top opt_check
+//To perform constant propogation optimization
+$ opt_clean -purge
+//Generate Netlist
+$ abc -liberty ../my_lib/lib/sky130_fd_sc_hd_-tt_025C_1v80.lib
+//Realizing Graphical Version of Logic for single modules
+$ show 
+```
+
+#### (i) counter_opt.v
+
+**_Expected logic from verilog file_**
+
+<img width="400" alt="count opt mo" src="https://user-images.githubusercontent.com/93824690/166236838-2e8bf699-50bd-45c8-ba09-0d24c8dc8a70.png">
+
+<img width="400" alt="count opt fig" src="https://user-images.githubusercontent.com/93824690/166236846-da9c5ae1-64cd-4db4-bec4-91551f122cdb.png">
+
+>_If there is a reset, the counter is intialised to 0, else it is incremented - performing like an upcounter. Since it is a 3 bit signal, the counter rolls back after 7. However, the final output q is sensing only the count [0], so the bit is toggling in every clock cycle (000, 001, 010 ...111). The other two outputs are unused and does not create any output dependency. Hence, these unused outpus need not be present in the design._
+
+**_Statistics showing only one flop inferred instead of 3 flops sinces it is a 3 bit counter_**
+
+<img width="400" alt="Screenshot (228)" src="https://user-images.githubusercontent.com/93824690/166236963-44e58dc3-2570-4e65-82f5-129412be9686.png">
+
+
+**_Realization of Logic_**
+
+<img width="400" alt="Screenshot (229)" src="https://user-images.githubusercontent.com/93824690/166236989-56da54ff-5a25-4e0d-8739-a7f1e1c2a004.png">
+
+>_optimized graphical realization output Q (count0) being fed to NOT gate so as to perform the toggle function. The other outputs which has no dependency on the primary out is optimized off._
+
+#### (ii) counter_opt2.v
+```
+//Steps Followed:
+//Copying the code to a new file
+$ cp counter_opt.v counter_opt2.v
+$ gvim counter_opt2.v
+//Changes made in the verilog code, i for insert mode: 
+- assign q = [count2:0] == 3'b100;
+```
+
+**_Expected logic from verilog file_**
+
+<img width="400" alt="co2 mo" src="https://user-images.githubusercontent.com/93824690/166238342-74ba4df0-f65c-4ca1-ba19-1c284064d1c8.png">
+
+>_In this case, all three bits of the counter is used and hence 3 flops are expected in the optimized netlist._
+
+**_Statistics showing all three flops inferred_**
+
+
+<img width="400" alt="co 2 st" src="https://user-images.githubusercontent.com/93824690/166238350-4589b69e-c10b-4b1f-bf56-495866548718.png">
+
+**_Realization of Logic_**
+
+<img width="400" alt="Screenshot (230)" src="https://user-images.githubusercontent.com/93824690/166237000-29183be5-d656-4900-ab10-107cbf57ed21.png">
+
+>_All three flops can be seen. There is a need for incremental logic, so the logic other than flops represent the adder circuit. The expression at the output is 
+q = counter2.counter1'.counter0'. Therefore, the outputs having no direct role on the primary output will only be optimized away._
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 4. Day 4 - Gate Level Simulation(GLS), Blocking vs Non-blocking and Synthesis-Simulation Mismatch
+
+### 4.1. What is Gate Level Simulation (GLS) ?
+Running the testbench against the synthesized netlist ouput as a DUT is known as Gate Level Simulation (GLS). The Output netlist should logically be same as the RTL code so that the testbench will align itself when we simulate both the files to obtain the waveforms.
+
+Why GLS?
+GLS is required to verify the logical correctness of the design post synthesis with the help of the netlist file. It ensures whether the timing of the design is met and for thi, the GLS used to run with delay annotations.
+
+How to perform GLS after obtaining a netlist output for a specific RTL design?
+To perform GLS using iverilog simulator, we need to add the path of the primitives and sky130 library files along with the netlist verilog code and testbench to successfully obtain the waveforms of post synthesis simulation.
 
 
 
@@ -713,11 +795,4 @@ $ show
 
 
 
-
-
-
-
-### 3.3.1. Optimizations
-By this time we have already noticed that our behavioural description (RTL design) goes through optimizations. As an example from our previously discussed design- multiple_modules.v, the sub_module2 which synthesized to be an OR gate but ended up being somethig diffrent. It has been mapped to a cell- 'sky130_fd_sc_hd__lpflow_inputiso1p_1' by Yosys from the Liberty. These optimizations are performed by the synthesis tool minimizing area, power consumption etc. in perspective.  
-![](assets/optimization_muliple_modules_1.png)
 
