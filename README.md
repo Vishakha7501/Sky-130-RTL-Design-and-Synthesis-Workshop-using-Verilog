@@ -334,6 +334,103 @@ $ !gvim dff_asyncres_ff.v
 
 <img width="700" alt="Screenshot (191)" src="https://user-images.githubusercontent.com/93824690/166209147-347c8784-a4e8-44fe-bf08-19c9b9b6e3c6.png">
 
+#### Interesting Optimizations
+```
+modules used are opened using the command
+$ gvim mult_*.v -o
+_Invoke Yosys
+$ yosys
+_Read library 
+$ read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+_Read Design
+$ read_verilog mult_2.v
+_Synthesize Design - this controls which module to synthesize
+$ synth -top mul2
+_Generate Netlist
+$ abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+_Realizing Graphical Version of Logic for single modules
+$ show 
+_Writing the netlist in a crisp manner 
+$ write_verilog -noattr mult_2.v
+$ !gvim mult_2.v
+```
+## (i) mult_2.v
+
+**_Expected Logic_**
+
+<img width="400" alt="Screenshot (195)" src="https://user-images.githubusercontent.com/93824690/166213003-2cf85b52-fd17-4f12-a404-b86da6d559fb.png">
+
+**_Statistics & abc command return due to absence of standard cell library_**
+
+<img width="400" alt="Screenshot (196)" src="https://user-images.githubusercontent.com/93824690/166213036-a483bd0c-8a76-4701-846c-dbaa416c3d10.png">
+
+ ##### No hardware requirements - No # of memories, memory bites, processes and cells. Number of cells inferred is 0.
+ 
+ **_NetList File of Sub-module_**
+ 
+<img width="400" alt="Screenshot (198)" src="https://user-images.githubusercontent.com/93824690/166213102-cc337c8f-74b0-475e-a622-81a3f3966cec.png">
+
+ **_Realization of Logic_**
+ 
+<img width="400" alt="Screenshot (197)" src="https://user-images.githubusercontent.com/93824690/166213092-96fdb5cc-2bd2-468b-a347-df2fc90980c5.png">
+
+## (ii) mult_8.v
+
+**_Expected Logic_**
+
+<img width="400" alt="Screenshot (194)" src="https://user-images.githubusercontent.com/93824690/166212974-d283029d-43ec-45be-bb02-6769eb3331f9.png">
+<img width="400" alt="Screen Shot 2021-09-04 at 4 19 20 AM" src="https://user-images.githubusercontent.com/89927660/132089537-ea9225f5-00ed-462f-b61e-208a3ae8d25e.png">
+**_Statistics _**
+
+<img width="400" alt="Screenshot (199)" src="https://user-images.githubusercontent.com/93824690/166213113-155dc525-71d2-48b5-8608-3f5351254cc5.png">
+ 
+ **_NetList File of Sub-module_**
+ 
+<img width="400" alt="Screenshot (202)" src="https://user-images.githubusercontent.com/93824690/166213150-51ca63d3-365e-48f5-b0db-c95ccc0ef7df.png">
+
+ **_Realization of Logic_**
+ 
+<img width="400" alt="Screenshot (200)" src="https://user-images.githubusercontent.com/93824690/166213140-c617aa85-8022-4f84-952b-bfa8970438e2.png">
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 3. Day 3 - Combinational and Sequential Optimizations
+
+### 3.1. Intro to Optimizations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
