@@ -286,7 +286,7 @@ $ gtkwave tb_dff_asyncres.vcd
 ```
 **GTK WAVE OF ASYNCHRONOUS RESET**
 
-<img width="641" alt="Screenshot (181)" src="https://user-images.githubusercontent.com/93824690/166207949-1b806556-0aa2-4671-b1a0-2d16b55fbbdc.png">
+<img width="750t="Screenshot (181)" src="https://user-images.githubusercontent.com/93824690/166207949-1b806556-0aa2-4671-b1a0-2d16b55fbbdc.png">
 
 #### FLIP FLOP SYNTHESIS
 
