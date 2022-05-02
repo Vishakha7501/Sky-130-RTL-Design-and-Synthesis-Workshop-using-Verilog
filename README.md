@@ -354,7 +354,7 @@ _Writing the netlist in a crisp manner
 $ write_verilog -noattr mult_2.v
 $ !gvim mult_2.v
 ```
-## (i) mult_2.v
+## (i) mult_2.v 
 
 **_Expected Logic_**
 
@@ -368,7 +368,7 @@ $ !gvim mult_2.v
  
  **_NetList File of Sub-module_**
  
-<img width="400" alt="Screenshot (198)" src="https://user-images.githubusercontent.com/93824690/166213102-cc337c8f-74b0-475e-a622-81a3f3966cec.png">
+<img width="200" alt="Screenshot (198)" src="https://user-images.githubusercontent.com/93824690/166213102-cc337c8f-74b0-475e-a622-81a3f3966cec.png">
 
  **_Realization of Logic_**
  
@@ -379,14 +379,14 @@ $ !gvim mult_2.v
 **_Expected Logic_**
 
 <img width="400" alt="Screenshot (194)" src="https://user-images.githubusercontent.com/93824690/166212974-d283029d-43ec-45be-bb02-6769eb3331f9.png">
-<img width="400" alt="Screen Shot 2021-09-04 at 4 19 20 AM" src="https://user-images.githubusercontent.com/89927660/132089537-ea9225f5-00ed-462f-b61e-208a3ae8d25e.png">
+<img width="300" alt="Screen Shot 2021-09-04 at 4 19 20 AM" src="https://user-images.githubusercontent.com/89927660/132089537-ea9225f5-00ed-462f-b61e-208a3ae8d25e.png">
 **_Statistics _**
 
 <img width="400" alt="Screenshot (199)" src="https://user-images.githubusercontent.com/93824690/166213113-155dc525-71d2-48b5-8608-3f5351254cc5.png">
  
  **_NetList File of Sub-module_**
  
-<img width="400" alt="Screenshot (202)" src="https://user-images.githubusercontent.com/93824690/166213150-51ca63d3-365e-48f5-b0db-c95ccc0ef7df.png">
+<img width="200" alt="Screenshot (202)" src="https://user-images.githubusercontent.com/93824690/166213150-51ca63d3-365e-48f5-b0db-c95ccc0ef7df.png">
 
  **_Realization of Logic_**
  
@@ -395,17 +395,105 @@ $ !gvim mult_2.v
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## 3. Day 3 - Combinational and Sequential Optimizations
+**Logic Circuits**
+Combinational circuits are defined as the time independent circuits which do not depends upon previous inputs to generate any output are termed as combinational circuits. Sequential circuits are those which are dependent on clock cycles and depends on present as well as past inputs to generate any output.
 
-### 3.1. Intro to Optimizations
+### 3.1. Introduction to Logic Optimizations
+
+#### Combinational Logic Optimization
+**Why do we need Combinational Logic Optimizations?**
+
+-[Primarily to squeeze the logic to get the most optimized design] (#Primarily-to-squeeze-the-logic-to-get-the-most-optimized-design)
+  -[An optimized design results in comprehensive Area and Power saving] (#An-optimized-design-results-in-comprehensive-Area-and-Power-saving)
+
+#### Types of Combinational Optimizations
+
+-[Constant Propagation](#Constant-Propagation)
+  -[Direct Optimization Technique](#Direct-Optimization-Technique)
+-[Boolean Logic Optimization](#Boolean-Logic-Optimization)
+  -[K-Map based](#K-Map-based)
+  -[Quine Mckluskey Algorithms(#Quine-Mckluskey-Algorithms)
+
+#### CONSTANT PROPAGATION
+
+In Constant propagation techniques, inputs that are no way related or affecting the changes in the output are ignored/optimized to simplify the combination logic thereby saving area and power usage by those input pins.
+```
+Y =((AB)+ C)'
+If A = 0
+Y =((0)+ C)' = C'
+```
+#### BOOLEAN LOGIC OPTIMIZATION
+
+Boolean logic optimization is nothing simplifying a complex boolean expression into a simplified expression by utilizing the laws of boolean logic algebra.
+```
+assign y = a?(b?c:(c?a:0)):(!c)
+```
+above is simplified as
+```
+y = a'c' + a(bc + b'ca) 
+y = a'c' + abc + ab'c 
+y = a'c' + ac(b+b') 
+y = a'c' + ac
+y = a xor c
+```
+### Sequential Logic Optimization
+
+#### Types of Sequential Optimizations
+
+-[Basic](#Basic)
+  -[Sequential Constant Propagation](#Sequential-Constant-Propagation)
+-[Advance](#Advance)
+  -[State Optimization](#State-Optimization)
+  -[Retiming](#Retiming)
+  -[Sequential Logic Cloning](#Sequential Logic Cloning)
+  
+#### COMBINATIONAL LOGIC OPTIMIZATION  
+```
+//to view all optimization files
+$ ls *opt_check*
+//Invoke Yosys
+$ yosys
+//Read library 
+$ read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+//Read Design
+$ read_verilog opt_check.v
+//Synthesize Design - this controls which module to synthesize
+$ synth -top opt_check
+//To perform constant propogation optimization
+$ opt_clean -purge
+//Generate Netlist
+$ abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+//Realizing Graphical Version of Logic for single modules
+$ show 
+```
+<img width="400" alt="Screenshot (203)" src="https://user-images.githubusercontent.com/93824690/166223707-f4d4d1ca-927c-4be8-8cea-e2c7de993af6.png">
+
+##### (i)opt_check.v
+**_Expected logic from verilog file_**
+<img width="400" alt="Screenshot (287)" src="https://user-images.githubusercontent.com/93824690/166224225-7901ba26-b2dc-4076-95c8-8ee0bfc92247.png">
+
+**_Command for constant propogation method_**
+<img width="400" alt="https://user-images.githubusercontent.com/93824690/166224442-e641857f-c064-494a-acc5-59aa3f12bf74.png">
+
+**_Realization of the Logic_**
+<img width="641" alt="Screenshot (206)" src"https://user-images.githubusercontent.com/93824690/166224940-a557c7c1-5e43-4dc1-8776-136b8c21aa2a.png">
+
+##### (ii)opt_check2.v
+**_Expected logic from verilog file_**
 
 
+**_Realization of the Logic_**
+<img width="641" alt="Screenshot (208)" src"https://user-images.githubusercontent.com/93824690/166224954-5bc8b24c-a42a-456a-a1c8-e6d77d127ab9.png">
+
+##### (iii)opt_check3.v
+**_Expected logic from verilog file_**
 
 
+**_Realization of the Logic_**
+<img width="641" alt="Screenshot (209)" src"https://user-images.githubusercontent.com/93824690/166224962-c2c38237-33f0-400e-afdf-867eddb8235b.png">
 
-
-
-
-
+##### (iv)opt_check4.v
+**_Expected logic from verilog file_**
 
 
 
