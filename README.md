@@ -45,7 +45,7 @@ In the digital circuit design, **register-transfer level (RTL)** is a design abs
 
 ### HOW SIMULATOR WORKS 
 **Simulator** looks for changes on input signals and based on that output is evaluated.
-![test bench](https://user-images.githubusercontent.com/93824690/166142807-b8b5a040-009f-4610-9691-cc3e5c53bbbe.png)
+<img src="https://user-images.githubusercontent.com/93824690/166142807-b8b5a040-009f-4610-9691-cc3e5c53bbbe.png" width="350" height="150">
 
 **Design** may have 1 or more primary inputs and primary outputs but **TB** doesn't have.)
 
