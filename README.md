@@ -473,6 +473,8 @@ $ show
 
 <img width="400" alt="13" src="https://user-images.githubusercontent.com/93824690/166227292-97c49c8d-0b68-4a8a-93cd-387c93d6eaf6.png">
 
+>_value of y depends on a, y = ab._
+
 **_Command for constant propogation method_**
 
 <img width="400" alt="2" src="https://user-images.githubusercontent.com/93824690/166227551-6acaad42-bf9b-43be-801a-1d4c5d97d48d.png">
@@ -481,24 +483,131 @@ $ show
 
 <img width="641" alt="Screenshot (206)" src="https://user-images.githubusercontent.com/93824690/166224940-a557c7c1-5e43-4dc1-8776-136b8c21aa2a.png">
 
-##### (ii)opt_check2.v
+>_optimized graphical realization thus shows a 2-input AND gate being implemented._
+
+#### (ii)opt_check2.v
 **_Expected logic from verilog file_**
+
 <img width="400" alt="opt check 2 mo" src="https://user-images.githubusercontent.com/93824690/166227941-e7372172-6854-4794-9e2a-1594d6024e18.png">
+
+>_value of y depends on a, y = a+b._
 
 **_Realization of the Logic_**
 
 <img width="641" alt="Screenshot (208)" src="https://user-images.githubusercontent.com/93824690/166224954-5bc8b24c-a42a-456a-a1c8-e6d77d127ab9.png">
 
-##### (iii)opt_check3.v
+>_optimized graphical realization thus shows 2-input OR gate being implemented. Although OR gate can be realized using NOR, it can lead to having stacked PMOS configuration which is not a design recommendation. So the OR gate is realized using NAND and NOT gates (which has stacked NMOS configuration)._
+
+#### (iii)opt_check3.v
 **_Expected logic from verilog file_**
 
 <img width="400" alt="opt check 3 mo" src="https://user-images.githubusercontent.com/93824690/166228053-f18837e0-0639-432c-8abe-3e3e59ad62f1.png">
 
+>_value of y depends on a, y = abc._
+
 **_Realization of the Logic_**
 <img width="641" alt="Screenshot (209)" src="https://user-images.githubusercontent.com/93824690/166224962-c2c38237-33f0-400e-afdf-867eddb8235b.png">
 
-##### (iv)opt_check4.v
+>_optimized graphical realization thus shows 3-input AND gate being implemented._
+
+#### (iv)opt_check4.v
 **_Expected logic from verilog file_**
+
+<img width="400" alt="opt check 4 mo" src="https://user-images.githubusercontent.com/93824690/166228431-140351df-3af6-4664-bf41-1cb1c04a12ce.png">
+
+>_The value of y depends on a, y = a'c + ac_
+**_Realization of the Logic_**
+
+<img width="400" alt="opt check 4" src="https://user-images.githubusercontent.com/93824690/166228436-ed297d9d-c379-41c1-add5-913614b9540e.png">
+
+>_optimized graphical realization thus shows A XNOR C gate being implemented._
+
+
+#### SEQUENTIAL LOGIC OPTIMIZATION  
+```
+//To view all optimization files
+$ ls *df*const*
+//To open multiple files 
+$ dff_const1.v -o dff_const2.v
+//Performing Simulation
+//Load the design in iVerilog by giving the verilog and testbench file names
+$ iverilog dff_const1.v tb_dff_const1.v 
+//To dump the VCD file
+$ ./a.out
+//To load the VCD file in GTKwaveform
+$ gtkwave tb_dff_const1.vcd
+//Performing Synthesis
+//Invoke Yosys 
+$ yosys
+//Read library 
+$ read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd_-tt_025C_1v80.lib
+//Read Design
+$ read_verilog dff_const1.v
+//Synthesize Design - this controls which module to synthesize
+$ synth -top dff_const1
+//There will be a separate flop library under a standard library
+//so we need to tell the design where to specifically pick up the DFF
+//But here we point back to the same library and tool looks only for DFF instead of all cells
+$ dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd_-tt_025C_1v80.lib
+//Generate Netlist
+$ abc -liberty ../my_lib/lib/sky130_fd_sc_hd_-tt_025C_1v80.lib
+//Realizing Graphical Version of Logic for single modules
+$ show 
+```
+#### (i)dff_const1.v
+
+**_Expected logic from verilog file_**
+
+<img width="400" alt="dff_const1" src="https://user-images.githubusercontent.com/93824690/166229653-c4399f44-b047-4ce5-9231-08d11b0da7f6.png">
+
+**_GTK Wave_**
+
+<img width="400" alt="const1 gtkwave" src="https://user-images.githubusercontent.com/93824690/166229663-62940883-a7d8-4948-8500-846e3adba739.png">
+
+**_GTK Wave_**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
