@@ -1146,7 +1146,7 @@ end
 
 <img width="400" alt="Screenshot (261)" src="https://user-images.githubusercontent.com/93824690/166264984-ce6f0d0d-473f-409c-9149-f37b5b82234b.png">
 
-#### CASE 2: partial case statement
+#### CASE 3: partial case statement
 **_Verilog File_**
 
 <img width="400" alt="p mo" src="https://user-images.githubusercontent.com/93824690/166267883-dfbcec82-f803-458d-bec6-81cd09ad7d4e.png">
@@ -1158,6 +1158,22 @@ end
 **_Realization of Logic_**
 
 <img width="400" alt="p re" src="https://user-images.githubusercontent.com/93824690/166267900-ca0787fd-c00b-4a33-96b4-7ea15e5f1c41.png">
+
+
+### 5.3 STATEMENTS USING FOR
+
+_Understanding the Usage of For and Generate Statements:_
+
+|FOR STATEMENTS|GENERATE STATEMENTS|
+|:---:|:---:|
+|These statements are used inside the always block|These statements are used outsde the always block|
+|Used for evaluating expressions|Used for instantiating/replicating Hardwares|
+
+#### CASE 1: using generate if statement
+
+**_Verilog File_**
+
+
 
 
 
