@@ -44,68 +44,69 @@ In the digital circuit design, **register-transfer level (RTL)** is a design abs
 
 **Test Bench**: It is the setup to apply stimulus(test vectors) to design to checks its functionality.
 
-### HOW SIMULATOR WORKS 
+#### HOW SIMULATOR WORKS 
 **Simulator** looks for changes on input signals and based on that output is evaluated.
-<img src="https://user-images.githubusercontent.com/93824690/166142807-b8b5a040-009f-4610-9691-cc3e5c53bbbe.png" width="350" height="150">
+
+<img width="641" alt="test bench" src="https://user-images.githubusercontent.com/93824690/166195956-3208f1c5-a7f8-405a-bdf7-08c2ae92ac4b.png">
+
 
 **Design** may have 1 or more primary inputs and primary outputs but **TB** doesn't have.)
 
  #### SIMULATION FLOW
-![iverilog based](https://user-images.githubusercontent.com/93824690/166142840-4d8a8377-526c-444e-9498-dc76068046fc.png)
+<img width="641" alt="iverilog based" src="https://user-images.githubusercontent.com/93824690/166142840-4d8a8377-526c-444e-9498-dc76068046fc.png">
 
 **Simulator** continuously checks for changes in the input. If there is an input change, the output is evaluated; else the simulator will never evaluate the output.
 
 ### 1.2. Labs using iverilog & gtkwave
  
- #### ENVIRONMENT SETUP
+#### ENVIRONMENT SETUP
 
-```
-#Steps Followed:
+``
 //create a directory
 $ mkdir VLSI 
 //Git Clone vsdflow. 
 $ git clone https://github.com/kunalg123/vsdflow.git
 //Git Clone sky130RTLDesignAndSynthesisWorkshop. 
 $ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
-```
-![Screenshot (130)](https://user-images.githubusercontent.com/93824690/166142874-66d2c8f4-0fc5-4a82-91ae-b3821f08f56e.png) 
+``
+<img width="641" alt="Screenshot (130)" src="https://user-images.githubusercontent.com/93824690/166142874-66d2c8f4-0fc5-4a82-91ae-b3821f08f56e.png"> 
  
 **sky130RTLDesignAndSynthesisWorkshop** Directory has: My_Lib - which contains all the necessary library files; where lib has the standard cell libraries to be used in synthesis and verilog_model with all standard cell verilog models for the standard cells present in the lib. Ther verilog_files folder contains all the experiments for lab sessions including both verilog code and test bench codes.
 
-<--We are given a default set of files and libraries shown below to work on using the practical lab instance.
+_We are given a default set of files and libraries shown below to work on using the practical lab instance._
 
-![Screenshot (134)](https://user-images.githubusercontent.com/93824690/166143655-b00175e1-864b-4aac-8c3c-a4f72e388351.png)
+<img width="641" alt="Screenshot (134)" src="https://user-images.githubusercontent.com/93824690/166143655-b00175e1-864b-4aac-8c3c-a4f72e388351.png">
 
-### Simulation using iverilog simulator - 2:1 multiplexer rtl design
+#### Simulation using iverilog simulator - 2:1 multiplexer rtl design
 
-#### Verilog file of a simple 2:1 multiplexer
+#### VERILOG FILE OF A SIMPLE 2:1 MUX
 
-![Screenshot (135)](https://user-images.githubusercontent.com/93824690/166143401-cb52b623-5095-45f4-b880-59b88e4c4bca.png)
+<img width="641" alt="Screenshot (135)" src="https://user-images.githubusercontent.com/93824690/166143401-cb52b623-5095-45f4-b880-59b88e4c4bca.png">
 
 
 #### GTKWAVE Analysis
 
-<img src="https://user-images.githubusercontent.com/93824690/166143969-6e8fb91c-fc09-4a8b-b779-5b45b834888c.png" width="700" height="350">
+<img src="https://user-images.githubusercontent.com/93824690/166143969-6e8fb91c-fc09-4a8b-b779-5b45b834888c.png" width="641">
 
 
 #### Access Module Files
-```
+``
 $ gvim tb_good_mux.v -o good_mux.v 
-```
+``
 
-![Screen Shot 2021-09-02 at 12 23 28 AM](https://user-images.githubusercontent.com/89927660/131786618-c6d4663f-5375-48dc-aa16-46b70e6797da.png)
+<img width="641" alt="Screen Shot 2021-09-02 at 12 23 28 AM" src="https://user-images.githubusercontent.com/89927660/131786618-c6d4663f-5375-48dc-aa16-46b70e6797da.png">
 
-## 1.3. Introduction to Yosys & Logic Synthesis
+### 1.3. Introduction to Yosys & Logic Synthesis
 
 **Synthesizer** is a tool for converting the **RTL** to Netlist and here we are using the **Yosys** Synthesizer.
 #### Yosys SETUP
-![Yosys](https://user-images.githubusercontent.com/93824690/166144581-f9888922-5b97-467b-bac8-42138d4c8a7e.png)
+<img width="641" alt="Yosys" src="https://user-images.githubusercontent.com/93824690/166144581-f9888922-5b97-467b-bac8-42138d4c8a7e.png">
 
-#### VERIFY THE SYNTHESIS
+
 
 <img width="641" alt="verify the synthesis" src="https://user-images.githubusercontent.com/93824690/166144585-f308505e-2f1a-468f-aff4-673800445259.png">
 
-### Logic Synthesis
+#### Logic Synthesis
 
 RTL Design - behavioral representation in HDL form for the required specification.
 
@@ -114,7 +115,7 @@ RTL Design - behavioral representation in HDL form for the required specificatio
 
 >_.lib file is a collection of logical modules which includes all basic logic gates. It may also contain different flavors of the same gate (2 input AND, 3 input AND – slow, medium and fast version)._
 
-### Faster cells and Slower Cells
+#### Faster cells and Slower Cells
 
 A cell delay in the digital logic circuit depends on the load of the circuit which here is Capacitance.
 
@@ -122,57 +123,57 @@ Faster the charging / discharging of the capacitance --> Lesser is the Cell Dela
 
 Inorder to charge/discharge the capacitance faster, we use wider transistors that can source more current. This will help us reduce the cell delay but at the same time, wider transistors consumer more power and area. Similarly, using narrower transistors help in reduced area and power but the circuit will have a higher cell delay. Hence, we have to compromise on area and power if we are to design a circuit with low cell delay.
 
-### Constraints
+#### Constraints
 
 A Constraint is a guidance file given to a synthesizer inorder to enable an optimum implementation of the logic circuit by selecting the appropriate flavour of cells (fast or slow).
 
-## 1.4. Labs using Yosys and Sky130 PDKs
+### 1.4. Labs using Yosys and Sky130 PDKs
 
-### Steps for Design Synthesis
+#### Steps for Design Synthesis
 
-![Screen Shot 2021-09-02 at 12 16 52 AM](https://user-images.githubusercontent.com/89927660/131785975-bbc0c874-8b81-4f29-b892-3b279c7dbc6c.png)
+<img width="641" alt="Screen Shot 2021-09-02 at 12 16 52 AM" src="https://user-images.githubusercontent.com/89927660/131785975-bbc0c874-8b81-4f29-b892-3b279c7dbc6c.png">
 
-### Inference from Synthesis and Execution of netlist generation
+#### Inference from Synthesis and Execution of netlist generation
 
-![Screenshot (151)](https://user-images.githubusercontent.com/93824690/166145643-8430fe11-9020-44dc-b649-194343b4f955.png)
+<img width="641" alt="Screenshot (151)" src="https://user-images.githubusercontent.com/93824690/166145643-8430fe11-9020-44dc-b649-194343b4f955.png">
 
-### Synthesis by using show command
+#### Synthesis by using show command
 
-![Screenshot (153)](https://user-images.githubusercontent.com/93824690/166145665-dfcf9e19-d920-4819-bdcd-793b6209da5c.png)
+<img width="641" alt="Screenshot (153)" src="https://user-images.githubusercontent.com/93824690/166145665-dfcf9e19-d920-4819-bdcd-793b6209da5c.png">
 
-### Writing Netlist
+#### Writing Netlist
 
-![Screenshot (157)](https://user-images.githubusercontent.com/93824690/166146410-42e93e44-0fba-4540-a819-95afff4e1b8b.png)
+<img width="641" alt="Screenshot (157)" src="https://user-images.githubusercontent.com/93824690/166146410-42e93e44-0fba-4540-a819-95afff4e1b8b.png">
 
-# 2. Day 2 - Timing Libs, Hierarchial Vs Flat Synthesis and Efficient Flop Coding Styles
-## 2.1. Introduction to timing labs
-```
+## 2. Day 2 - Timing Libs, Hierarchial Vs Flat Synthesis and Efficient Flop Coding Styles
+### 2.1. Introduction to timing labs
+``
 __Command to open the libary file
 $ gvim ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 __To shut off the background colors/ syntax off:
 : syn off
 __To enable the line numbers
 : se nu
-```
-### Library file
+``
+#### Library file
 
-![Screenshot (150)](https://user-images.githubusercontent.com/93824690/166147361-8f538de7-24d2-410e-81c2-832710298c5a.png)
+<img width="641" alt="Screenshot (150)" src="https://user-images.githubusercontent.com/93824690/166147361-8f538de7-24d2-410e-81c2-832710298c5a.png">
 
-### Contents
+#### Contents
 
 For a design to work, there are three important parameters that determines how the Silicon works: Process (Variations due to Fabrications), Voltage (Changes in the behavior of the circuit) and Temperature (Sensitivity of semiconductors). Libraries are characterized to model these variations. 
 
-![Screenshot (162)](https://user-images.githubusercontent.com/93824690/166147849-14fa3eaf-0ca9-440c-bbe8-7b52f6cd682e.png)
+<img width="641" alt="Screenshot (162)" src="https://user-images.githubusercontent.com/93824690/166147849-14fa3eaf-0ca9-440c-bbe8-7b52f6cd682e.png">
 
-### Various Flavours of AND Cell
+#### Various Flavours of AND Cell
 
-![Screenshot (163)](https://user-images.githubusercontent.com/93824690/166147855-692033f0-08e1-465f-98b6-5a9fba6a3eb0.png)
+<img width="641" alt="Screenshot (163)" src="https://user-images.githubusercontent.com/93824690/166147855-692033f0-08e1-465f-98b6-5a9fba6a3eb0.png">
 
 
-## 2.2. Hierarchial synthesis vs Flat synthesis 
+### 2.2. Hierarchial synthesis vs Flat synthesis 
 
-### Hierarchial synthesis  
-```
+#### Hierarchial synthesis  
+``
 _Opening the file used for this experiment
 $ gvim multiple_modules.v
 _Invoke Yosys
@@ -190,32 +191,32 @@ $ show multiple_modules
 _Writing the netlist in a crisp manner 
 $ write_verilog -noattr multiple_modules_hier.v
 $ !gvim multiple_modules_hier.v
-```
+``
 **Multiple Modules:** - 2 SubModules
 **Staistics of Multiple Modules**
 
-![Screen Shot 2021-09-02 at 5 04 14 PM](https://user-images.githubusercontent.com/89927660/131922463-01b29515-c90d-4431-aa86-f10b15fa8d82.png)
+<img width="641" alt="Screen Shot 2021-09-02 at 5 04 14 PM" src="https://user-images.githubusercontent.com/89927660/131922463-01b29515-c90d-4431-aa86-f10b15fa8d82.png">
 
 **Realization of the Logic**
 
-![Screen Shot 2021-09-02 at 5 12 46 PM](https://user-images.githubusercontent.com/89927660/131923051-5d882430-fa4a-4b0d-8b70-0857c58f9b34.png)
+<img width="641" alt="Screen Shot 2021-09-02 at 5 12 46 PM" src="https://user-images.githubusercontent.com/89927660/131923051-5d882430-fa4a-4b0d-8b70-0857c58f9b34.png">
 
 **Netlist file**
 
-![Screen Shot 2021-09-04 at 4 32 57 AM](https://user-images.githubusercontent.com/89927660/132089951-73857fd9-aba8-40ac-b477-b316c8df5dc4.png)
+<img width="641" alt="Screen Shot 2021-09-04 at 4 32 57 AM" src ="https://user-images.githubusercontent.com/89927660/132089951-73857fd9-aba8-40ac-b477-b316c8df5dc4.png">
 
-### Flat synthesis  
+#### Flat synthesis  
 
-```
+``
 _To flatten the netlist
 $ flatten
 _Writing the netlist in a crisp manner and to view it
 $ write_verilog -noattr multiple_modules_flat.v
 $ !gvim multiple_modules_flat.v
-```
+``
 **Realization of the Logic**
 
-![Screen Shot 2021-09-02 at 6 14 16 PM](https://user-images.githubusercontent.com/89927660/131927662-d25c4d37-c0c1-41a7-ab14-9399840eb3ee.png)
+<img width="641" alt="Screen Shot 2021-09-02 at 6 14 16 PM" src="https://user-images.githubusercontent.com/89927660/131927662-d25c4d37-c0c1-41a7-ab14-9399840eb3ee.png">
   
  
 **Netlist file**
@@ -223,7 +224,7 @@ $ !gvim multiple_modules_flat.v
 ![Screen Shot 2021-09-02 at 6 10 30 PM](https://user-images.githubusercontent.com/89927660/131927406-1410346f-77bd-4fe0-a589-ffe2bf2f1a53.png)
 
 
-### SUB MODULE LEVEL SYNTHESIS
+#### SUB MODULE LEVEL SYNTHESIS
 
 Sub-module level synthesis is preferred when there are multiple instances of same module. Sythesizing the same module over several times may not be advantageous with respect to time. Instead, synthsis can be performed for one module, its netlist can be replicated and then stitched together in the top module. This is also used particulary in massive designs using divide and conquer method. 
 
