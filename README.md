@@ -470,30 +470,36 @@ $ show
 
 ##### (i)opt_check.v
 **_Expected logic from verilog file_**
-<img width="641" alt 13" src="https://user-images.githubusercontent.com/93824690/166226904-de56d141-b404-403c-bf7f-ff5de15fe3c9.png">
+
+<img width="400" alt="13" src="https://user-images.githubusercontent.com/93824690/166227292-97c49c8d-0b68-4a8a-93cd-387c93d6eaf6.png">
 
 **_Command for constant propogation method_**
-<img width="400" alt="https://user-images.githubusercontent.com/93824690/166224442-e641857f-c064-494a-acc5-59aa3f12bf74.png">
+
+<img width="400" alt="2" src="https://user-images.githubusercontent.com/93824690/166227551-6acaad42-bf9b-43be-801a-1d4c5d97d48d.png">
 
 **_Realization of the Logic_**
+
 <img width="641" alt="Screenshot (206)" src="https://user-images.githubusercontent.com/93824690/166224940-a557c7c1-5e43-4dc1-8776-136b8c21aa2a.png">
 
 ##### (ii)opt_check2.v
 **_Expected logic from verilog file_**
-
+<img width="400" alt="opt check 2 mo" src="https://user-images.githubusercontent.com/93824690/166227941-e7372172-6854-4794-9e2a-1594d6024e18.png">
 
 **_Realization of the Logic_**
+
 <img width="641" alt="Screenshot (208)" src="https://user-images.githubusercontent.com/93824690/166224954-5bc8b24c-a42a-456a-a1c8-e6d77d127ab9.png">
 
 ##### (iii)opt_check3.v
 **_Expected logic from verilog file_**
 
+<img width="400" alt="opt check 3 mo" src="https://user-images.githubusercontent.com/93824690/166228053-f18837e0-0639-432c-8abe-3e3e59ad62f1.png">
 
 **_Realization of the Logic_**
 <img width="641" alt="Screenshot (209)" src="https://user-images.githubusercontent.com/93824690/166224962-c2c38237-33f0-400e-afdf-867eddb8235b.png">
 
 ##### (iv)opt_check4.v
 **_Expected logic from verilog file_**
+
 
 
 
