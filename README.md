@@ -1149,7 +1149,15 @@ end
 #### CASE 2: partial case statement
 **_Verilog File_**
 
+<img width="400" alt="p mo" src="https://user-images.githubusercontent.com/93824690/166267883-dfbcec82-f803-458d-bec6-81cd09ad7d4e.png">
 
+**_Synthesis Statistics_**
+
+<img width="400" alt="p st" src="https://user-images.githubusercontent.com/93824690/166267889-5976618e-4223-470e-b9ad-2a33636b8ba6.png">
+
+**_Realization of Logic_**
+
+<img width="400" alt="p re" src="https://user-images.githubusercontent.com/93824690/166267900-ca0787fd-c00b-4a33-96b4-7ea15e5f1c41.png">
 
 
 
