@@ -195,7 +195,7 @@ $ !gvim multiple_modules_hier.v
 **Multiple Modules:** - 2 SubModules
 **Staistics of Multiple Modules**
 
-<img width="500" alt="Screen Shot 2021-09-02 at 5 04 14 PM" src="https://user-images.githubusercontent.com/89927660/131922463-01b29515-c90d-4431-aa86-f10b15fa8d82.png">
+<img width="200" alt="Screen Shot 2021-09-02 at 5 04 14 PM" src="https://user-images.githubusercontent.com/89927660/131922463-01b29515-c90d-4431-aa86-f10b15fa8d82.png">
 
 **Realization of the Logic**
 
