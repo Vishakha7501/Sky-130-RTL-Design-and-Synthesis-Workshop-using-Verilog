@@ -86,7 +86,7 @@ _We are given a default set of files and libraries shown below to work on using 
 
 #### GTKWAVE Analysis
 
-<img src="https://user-images.githubusercontent.com/93824690/166143969-6e8fb91c-fc09-4a8b-b779-5b45b834888c.png" width="641">
+<img src="https://user-images.githubusercontent.com/93824690/166143969-6e8fb91c-fc09-4a8b-b779-5b45b834888c.png" width="750">
 
 
 #### Access Module Files
@@ -216,7 +216,7 @@ $ !gvim multiple_modules_flat.v
 ```
 **Realization of the Logic**
 
-<img width="1000" alt="Screen Shot 2021-09-02 at 6 14 16 PM" src="https://user-images.githubusercontent.com/89927660/131927662-d25c4d37-c0c1-41a7-ab14-9399840eb3ee.png">
+<img width="750" alt="Screen Shot 2021-09-02 at 6 14 16 PM" src="https://user-images.githubusercontent.com/89927660/131927662-d25c4d37-c0c1-41a7-ab14-9399840eb3ee.png">
   
  
 **Netlist file**
@@ -362,7 +362,7 @@ $ !gvim mult_2.v
 
 **_Statistics & abc command return due to absence of standard cell library_**
 
-<img width="400" alt="Screenshot (196)" src="https://user-images.githubusercontent.com/93824690/166213036-a483bd0c-8a76-4701-846c-dbaa416c3d10.png">
+<img width="641" alt="Screenshot (196)" src="https://user-images.githubusercontent.com/93824690/166213036-a483bd0c-8a76-4701-846c-dbaa416c3d10.png">
 
  ##### No hardware requirements - No # of memories, memory bites, processes and cells. Number of cells inferred is 0.
  
@@ -380,6 +380,7 @@ $ !gvim mult_2.v
 
 <img width="400" alt="Screenshot (194)" src="https://user-images.githubusercontent.com/93824690/166212974-d283029d-43ec-45be-bb02-6769eb3331f9.png">
 <img width="300" alt="Screen Shot 2021-09-04 at 4 19 20 AM" src="https://user-images.githubusercontent.com/89927660/132089537-ea9225f5-00ed-462f-b61e-208a3ae8d25e.png">
+
 **_Statistics _**
 
 <img width="400" alt="Screenshot (199)" src="https://user-images.githubusercontent.com/93824690/166213113-155dc525-71d2-48b5-8608-3f5351254cc5.png">
@@ -400,11 +401,11 @@ Combinational circuits are defined as the time independent circuits which do not
 
 ### 3.1. Introduction to Logic Optimizations
 
-#### Combinational Logic Optimization
+### Combinational Logic Optimization
 **Why do we need Combinational Logic Optimizations?**
 
--[Primarily to squeeze the logic to get the most optimized design] (#Primarily-to-squeeze-the-logic-to-get-the-most-optimized-design)
-  -[An optimized design results in comprehensive Area and Power saving] (#An-optimized-design-results-in-comprehensive-Area-and-Power-saving)
+* Primarily to squeeze the logic to get the most optimized design.
+    * An optimized design results in comprehensive Area and Power saving.
 
 #### Types of Combinational Optimizations
 
@@ -466,9 +467,9 @@ $ abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 //Realizing Graphical Version of Logic for single modules
 $ show 
 ```
-<img width="400" alt="Screenshot (203)" src="https://user-images.githubusercontent.com/93824690/166223707-f4d4d1ca-927c-4be8-8cea-e2c7de993af6.png">
+<img width="641" alt="Screenshot (203)" src="https://user-images.githubusercontent.com/93824690/166223707-f4d4d1ca-927c-4be8-8cea-e2c7de993af6.png">
 
-##### (i)opt_check.v
+#### (i)opt_check.v
 **_Expected logic from verilog file_**
 
 <img width="400" alt="13" src="https://user-images.githubusercontent.com/93824690/166227292-97c49c8d-0b68-4a8a-93cd-387c93d6eaf6.png">
@@ -485,7 +486,7 @@ $ show
 
 >_optimized graphical realization thus shows a 2-input AND gate being implemented._
 
-#### (ii)opt_check2.v
+### (ii) opt_check2.v
 **_Expected logic from verilog file_**
 
 <img width="400" alt="opt check 2 mo" src="https://user-images.githubusercontent.com/93824690/166227941-e7372172-6854-4794-9e2a-1594d6024e18.png">
@@ -498,7 +499,7 @@ $ show
 
 >_optimized graphical realization thus shows 2-input OR gate being implemented. Although OR gate can be realized using NOR, it can lead to having stacked PMOS configuration which is not a design recommendation. So the OR gate is realized using NAND and NOT gates (which has stacked NMOS configuration)._
 
-#### (iii)opt_check3.v
+### (iii) opt_check3.v
 **_Expected logic from verilog file_**
 
 <img width="400" alt="opt check 3 mo" src="https://user-images.githubusercontent.com/93824690/166228053-f18837e0-0639-432c-8abe-3e3e59ad62f1.png">
@@ -510,7 +511,7 @@ $ show
 
 >_optimized graphical realization thus shows 3-input AND gate being implemented._
 
-#### (iv)opt_check4.v
+### (iv) opt_check4.v
 **_Expected logic from verilog file_**
 
 <img width="400" alt="opt check 4 mo" src="https://user-images.githubusercontent.com/93824690/166228431-140351df-3af6-4664-bf41-1cb1c04a12ce.png">
@@ -519,7 +520,7 @@ $ show
 
 **_Realization of the Logic_**
 
-<img width="641" alt="opt check 4" src="https://user-images.githubusercontent.com/93824690/166228436-ed297d9d-c379-41c1-add5-913614b9540e.png">
+<img width="750" alt="opt check 4" src="https://user-images.githubusercontent.com/93824690/166228436-ed297d9d-c379-41c1-add5-913614b9540e.png">
 
 >_optimized graphical realization thus shows A XNOR C gate being implemented._
 
@@ -563,7 +564,7 @@ $ show
 
 **_GTK Wave_**
 
-<img width="400" alt="const1 gtkwave" src="https://user-images.githubusercontent.com/93824690/166229663-62940883-a7d8-4948-8500-846e3adba739.png">
+<img width="700" alt="const1 gtkwave" src="https://user-images.githubusercontent.com/93824690/166229663-62940883-a7d8-4948-8500-846e3adba739.png">
 
 **_Statistics showing a flop inferred_**
 
@@ -571,7 +572,7 @@ $ show
 																		  
 **_Realization of Logic_**																	
 
-<img width="400" alt="Screenshot (216)" src="https://user-images.githubusercontent.com/93824690/166231848-275be7b7-7123-44f9-af20-99045cbaf5bd.png">
+<img width="750" alt="Screenshot (216)" src="https://user-images.githubusercontent.com/93824690/166231848-275be7b7-7123-44f9-af20-99045cbaf5bd.png">
 
 >_The optimized graphical realization thus shows the flop inferred. Also, the design code has active high reset and the standard cell library has active low reset - so, there is a presence of inverter for the reset._
 
@@ -583,7 +584,7 @@ $ show
 
 **_GTK Wave_**
 
-<img width="400" alt="const 2 gtk" src= "https://user-images.githubusercontent.com/93824690/166233155-e111c609-f9ca-4241-88e0-784ca36fcd73.png">
+<img width="700" alt="const 2 gtk" src= "https://user-images.githubusercontent.com/93824690/166233155-e111c609-f9ca-4241-88e0-784ca36fcd73.png">
 
 **_Statistics showing a flop inferred_**
 
@@ -602,7 +603,7 @@ $ show
 
 **_GTK Wave_**
 
-<img width="400" alt="Screenshot (221)" src="https://user-images.githubusercontent.com/93824690/166231920-517d7982-bef0-4684-995b-36a7431c5192.png">
+<img width="700" alt="Screenshot (221)" src="https://user-images.githubusercontent.com/93824690/166231920-517d7982-bef0-4684-995b-36a7431c5192.png">
 
 **_Statistics showing a flop inferred_**
 
@@ -610,7 +611,7 @@ $ show
 																		  
 **_Realization of Logic_**
 
-<img width="400" alt="Screenshot (223)" src="https://user-images.githubusercontent.com/93824690/166231948-45a94b52-e593-4128-8958-ec4157806351.png">
+<img width="750" alt="Screenshot (223)" src="https://user-images.githubusercontent.com/93824690/166231948-45a94b52-e593-4128-8958-ec4157806351.png">
 
 
 																		 
@@ -623,7 +624,7 @@ $ show
 
 **_GTK Wave_**
 
-<img width="400" alt="const 4 gtk" src="https://user-images.githubusercontent.com/93824690/166235397-a216da63-c9f9-4df5-a583-471885306443.png">
+<img width="700" alt="const 4 gtk" src="https://user-images.githubusercontent.com/93824690/166235397-a216da63-c9f9-4df5-a583-471885306443.png">
 
 **_Statistics showing a flop inferred_**
 
@@ -644,7 +645,7 @@ $ show
 
 **_GTK Wave_**
 
-<img width="400" alt="const 5 gtk" src="https://user-images.githubusercontent.com/93824690/166235800-81062051-7b67-419f-b40a-67b4b7fc6ea3.png">
+<img width="700" alt="const 5 gtk" src="https://user-images.githubusercontent.com/93824690/166235800-81062051-7b67-419f-b40a-67b4b7fc6ea3.png">
 
 **_Statistics showing a flop inferred_**
 
@@ -653,7 +654,7 @@ $ show
 						
 **_Realization of Logic_**
 
-<img width="400" alt="const 5 re" src="https://user-images.githubusercontent.com/93824690/166235967-b31ef6b1-dbb0-4cd7-8705-78bb3c4b8d20.png">
+<img width="750" alt="const 5 re" src="https://user-images.githubusercontent.com/93824690/166235967-b31ef6b1-dbb0-4cd7-8705-78bb3c4b8d20.png">
 
 
 #### SEQUENTIAL UNUSED OUTPUT OPTIMIZATION
@@ -694,7 +695,7 @@ $ show
 
 **_Realization of Logic_**
 
-<img width="400" alt="Screenshot (229)" src="https://user-images.githubusercontent.com/93824690/166236989-56da54ff-5a25-4e0d-8739-a7f1e1c2a004.png">
+<img width="750" alt="Screenshot (229)" src="https://user-images.githubusercontent.com/93824690/166236989-56da54ff-5a25-4e0d-8739-a7f1e1c2a004.png">
 
 >_optimized graphical realization output Q (count0) being fed to NOT gate so as to perform the toggle function. The other outputs which has no dependency on the primary out is optimized off._
 
@@ -721,7 +722,7 @@ $ gvim counter_opt2.v
 
 **_Realization of Logic_**
 
-<img width="400" alt="Screenshot (230)" src="https://user-images.githubusercontent.com/93824690/166237000-29183be5-d656-4900-ab10-107cbf57ed21.png">
+<img width="750" alt="Screenshot (230)" src="https://user-images.githubusercontent.com/93824690/166237000-29183be5-d656-4900-ab10-107cbf57ed21.png">
 
 >_All three flops can be seen. There is a need for incremental logic, so the logic other than flops represent the adder circuit. The expression at the output is 
 q = counter2.counter1'.counter0'. Therefore, the outputs having no direct role on the primary output will only be optimized away._
@@ -732,15 +733,20 @@ q = counter2.counter1'.counter0'. Therefore, the outputs having no direct role o
 
 ### 4.1.GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements
 **What is Gate Level Simulation (GLS) ?**
+
 Running the testbench against the synthesized netlist ouput as a DUT is known as Gate Level Simulation (GLS). The Output netlist should logically be same as the RTL code so that the testbench will align itself when we simulate both the files to obtain the waveforms.
+
 **_Advantages of GLS:_**
+
  *To logically verify the correctness of the design after Synthesis.
  *During the RTL Simulation, timing was not accounted. But for practical applications, there is a need to ensure the timing of the design to be met.
  
 **Why GLS?**
+
 GLS is required to verify the logical correctness of the design post synthesis with the help of the netlist file. It ensures whether the timing of the design is met and for thi, the GLS used to run with delay annotations.
 
 <img width="400" alt="GLS" src="https://user-images.githubusercontent.com/93824690/166241284-6638d96e-4e21-4c93-a238-ed43834ecf37.png">
+
 ```
 //consider a netlist
 and uand (.a(a),.b(b))
@@ -748,17 +754,19 @@ or uor (.a(a),.b(b))
 //There is a need to define the meaning of and and or
 //Thus we need netlist, testbench and verilog models of the standard cells
 ```
+
 >_Netlist consists of all standard cells instantiated and it's meaning is conveyed to the iVerilog using Gate Level Verilog Models. Gate Level Verilog Models can be functional or timing aware. If the gate level models are delay annotated, then GLS can be performed for timing validation also in addition to functional validation._
 
-#### SYNTHESIS SIMULATION MISMATCH
+### SYNTHESIS SIMULATION MISMATCH
 
 If netlist is a true reciprocation of RTL, what is the need to validate the functionality of netlist? There may be synthesis and simulation mismatch due to the following reasons:
 
-**(I)Missing Sensitivity List
- (II)Blocking Vs Non Blocking Assignments
- (III)Non Standard Verilog Coding**
+**(I)_Missing Sensitivity List_**
+**(II)_Blocking Vs Non Blocking Assignments_**
+**(III)_Non Standard Verilog Coding_**
 
 **(I)Missing Sensitivity List**
+
 ```
 module mux(
 input i0,input i1
@@ -800,10 +808,11 @@ Blocking and Non-blocking statements are procedural assignment statements that c
 
 *Blocking Assignments --> =
    *Executes the statements in the order in which they are coded.
+   
 *Non-blocking Assignments --> <=
    *Executes the RHS of all such assignments when the always block is entered and assigned to LHS in a parallel evaluation.
    
-Synthesis-Simulation mismatches due to incorrect ordering of the blocking assignments done inside an always block.
+_Synthesis-Simulation mismatches due to incorrect ordering of the blocking assignments done inside an always block._
 
 #### CAVEAT 1:-
 ```
@@ -873,7 +882,8 @@ begin
 end 
 endmodule
 ```
-#### > Therefore there is a paramount importance to run the GLS on the netlist and match the specifications, to ensure there is no simulation synthesis mismatch.####
+
+**> Therefore there is a paramount importance to run the GLS on the netlist and match the specifications, to ensure there is no simulation synthesis mismatch.**
 
 #### (i) ternary_operator.v
 >_Note: Mux function is written using a ternary operator. Ternary operator takes 3 operands with the format.
@@ -885,6 +895,7 @@ endmodule
 <img width="641" alt="Screenshot (288)" src="https://user-images.githubusercontent.com/93824690/166249218-f94c6544-cef7-4861-853b-9e99f0f250f5.png">
 
 **_GTK Wave_**
+
 <img width="641" alt="Screenshot (237)" src="https://user-images.githubusercontent.com/93824690/166249367-e4b5567f-f683-4a5e-89fb-b875ad6eeaf4.png">
 
 **_Statistics_**
@@ -893,19 +904,17 @@ endmodule
 
 **_Realization of Logic_**
 
-<img width="641" alt="Screenshot (238)"src="https://user-images.githubusercontent.com/93824690/166249396-10ea2950-f074-4f53-b8e1-296fea18491d.png">
+<img width="641" alt="Screenshot (238)" src="https://user-images.githubusercontent.com/93824690/166249396-10ea2950-f074-4f53-b8e1-296fea18491d.png">
 
 >_NAND gate with i1 and sel, inverted io and Or to And invert gate, to which the inputs are sel and inverted i0. The output y is given by the expression = sel'.i0 + sel.i1_
 
-**_Commands to perform Gate Level Simulation_**
-
-<img width="400" alt="command gls" src="https://user-images.githubusercontent.com/93824690/166250785-3f96dd41-2f7a-4440-baa8-0a3749853415.png">
 
 **_GLS OUTPUT_**
 
-<img width="641" alt="gls gtk" src="https://user-images.githubusercontent.com/93824690/166250831-c7b446ef-d96e-46a0-893c-edf6e9780d30.png">
+<img width="700" alt="gls gtk" src="https://user-images.githubusercontent.com/93824690/166250831-c7b446ef-d96e-46a0-893c-edf6e9780d30.png">
 
 #### MISSING SENSITIVITY LIST
+
 #### (ii): bad_mux.v showing mismatch due to missing sensitivity list
 
 **_Verilog File_**
@@ -916,7 +925,7 @@ endmodule
 
 **_GTK Wave_**
 
-<img width="400" alt="bad gtk" src="https://user-images.githubusercontent.com/93824690/166253027-c182567f-82ff-483a-af77-aabdf6e1d2cd.png">
+<img width="700" alt="bad gtk" src="https://user-images.githubusercontent.com/93824690/166253027-c182567f-82ff-483a-af77-aabdf6e1d2cd.png">
 
 **_Synthesis Statistics_**
 
@@ -925,16 +934,17 @@ endmodule
 **_GLS Output_**
 
 
-<img width="400" alt="bad gls" src="https://user-images.githubusercontent.com/93824690/166253052-a961d8b0-dc45-4b4a-a90e-ff5409fa0448.png">
+<img width="700" alt="bad gls" src="https://user-images.githubusercontent.com/93824690/166253052-a961d8b0-dc45-4b4a-a90e-ff5409fa0448.png">
 
 
 **_Realization of Logic_**
 
-<img width="400" alt="Screenshot (241)" src="https://user-images.githubusercontent.com/93824690/166253100-20d54e2c-58b6-479c-bb7a-296833f7d4ee.png">
+<img width="641" alt="Screenshot (241)" src="https://user-images.githubusercontent.com/93824690/166253100-20d54e2c-58b6-479c-bb7a-296833f7d4ee.png">
 
 >_Confirms the functionality of 2x1 mux after synthesis where when the select is low, activity of input 0 is reflected on y. Similarly, when the select is hight, activity of input 1 is reflected on y. Hence there is a synthesis simulation mismatch due to missing sensitivity list._
 
 #### CAVEATS IN BLOCKING ASSIGNMENTS
+
 #### (iii) blocking_caveat.v showing mismatch due to blocking assignments
 
 **_Verilog File_**
@@ -949,16 +959,17 @@ endmodule
 
 **_GTK Wave_**
 
-<img width="400" alt="cav gtk" src="https://user-images.githubusercontent.com/93824690/166254577-420c3b5f-2e2e-43ba-a670-f41a828e0e75.png">
+<img width="700" alt="cav gtk" src="https://user-images.githubusercontent.com/93824690/166254577-420c3b5f-2e2e-43ba-a670-f41a828e0e75.png">
 
 >_d = (a+b).c, if the inputs a,b = 0; then a+b = 0. The output d = 0. But, we observe the output d = 1 because it looks at the past value where a+b was 1._
+
 **_GLS Output_**
 
-<img width="400" alt="cav gls" src="https://user-images.githubusercontent.com/93824690/166254673-5b2ff6aa-4aea-4ca1-bb06-28079dc50910.png">
+<img width="700" alt="cav gls" src="https://user-images.githubusercontent.com/93824690/166254673-5b2ff6aa-4aea-4ca1-bb06-28079dc50910.png">
 
 **_Realization of Logic_**
 
-<img width="400" alt="cav re" src="https://user-images.githubusercontent.com/93824690/166254689-2095c677-6fe6-4264-b840-880b8017675b.png">
+<img width="750" alt="cav re" src="https://user-images.githubusercontent.com/93824690/166254689-2095c677-6fe6-4264-b840-880b8017675b.png">
 
 <_value of output d is 0 after simulation and 1 after synthesis for the same set of input values. Hence there is a synthesis simulation mismatch due to blocking assignments._
 
@@ -1065,7 +1076,7 @@ end
 
 ### 5.2 INCOMPLETE IF STATEMENTS
 
-#### (1) incomplete if statements
+#### * (Case 1) incomplete if statements
 
 **_Verilog File_**
 
@@ -1076,6 +1087,7 @@ end
 <img width="" alt="Screenshot (250)" src="https://user-images.githubusercontent.com/93824690/166262139-4b40b5d0-55e9-448b-968f-1bc5dbd59c4a.png">
 
 >_Else case is missing so there will be a D latch._
+
 **_Synthesis Statistics_**																		  
 <img width="400" alt="Screenshot (251)" src="https://user-images.githubusercontent.com/93824690/166262175-01dc3362-8128-43a2-bda4-14be20b26d7d.png">
 
@@ -1084,15 +1096,15 @@ end
 
 >_synthesized design has a D Latch inferred due to incomplete if structure (missing else statement)._
 
-#### (Case2) incomplete if statements
+#### * (Case2) incomplete if statements
 
 **_Verilog File_**
 
-<img width="400" alt="200" src="https://user-images.githubusercontent.com/93824690/166263847-c791f930-eeb1-45ff-8052-f1d247b8bebd.png">
+<img width="641" alt="200" src="https://user-images.githubusercontent.com/93824690/166263847-c791f930-eeb1-45ff-8052-f1d247b8bebd.png">
 
 **_GTK Wave_**
 
-<img width="641" alt="Screenshot (254)" src="https://user-images.githubusercontent.com/93824690/166262258-db09ddf3-47d0-44d3-888c-6b45b56d1cdf.png">
+<img width="700" alt="Screenshot (254)" src="https://user-images.githubusercontent.com/93824690/166262258-db09ddf3-47d0-44d3-888c-6b45b56d1cdf.png">
 
 >_When i0 is high, the output follows i1. When i0 is low, the output latches to a constant value (when both i0 and i2 are 0). Presence of inferred latches due to incomplete if structure._
 
@@ -1110,10 +1122,10 @@ end
 #### CASE 1: incomplete case statements
 **_Verilog File_**
 
-<img width="400" alt="33" src="https://user-images.githubusercontent.com/93824690/166265632-97eb0312-e58f-40e6-9f26-fa6b54abb8ca.png">
+<img width="641" alt="33" src="https://user-images.githubusercontent.com/93824690/166265632-97eb0312-e58f-40e6-9f26-fa6b54abb8ca.png">
 
 **_GTK Wave_**
-<img width="641" alt="Screenshot (258)" src="https://user-images.githubusercontent.com/93824690/166264918-dab97bee-102e-43b2-9887-d8d07419b281.png">
+<img width="700" alt="Screenshot (258)" src="https://user-images.githubusercontent.com/93824690/166264918-dab97bee-102e-43b2-9887-d8d07419b281.png">
 
 >_When select signal is 00, the output follows i0 and is i1 when the select value is 01. Since the output is undefined for 10 and 11 values, the ouput latches to the previously available value._
 
@@ -1123,7 +1135,7 @@ end
 
 **_Realization of Logic_**
 
-<img width="700" alt="Screenshot (259)" src="https://user-images.githubusercontent.com/93824690/166264934-397bc9a5-7e18-419c-898b-14d910aeafe5.png">
+<img width="750" alt="Screenshot (259)" src="https://user-images.githubusercontent.com/93824690/166264934-397bc9a5-7e18-419c-898b-14d910aeafe5.png">
 
 >_The synthesized design has a D Latch inferred due to incomplete case structure (missing output definition for 2 of the select statements)._
 
@@ -1131,7 +1143,7 @@ end
 
 **_Verilog File_**
 
-<img width="400" alt="comp case mo" src="https://user-images.githubusercontent.com/93824690/166266795-cf2d4b1c-76f3-434f-a86a-873ead2f66e8.png">
+<img width="641" alt="comp case mo" src="https://user-images.githubusercontent.com/93824690/166266795-cf2d4b1c-76f3-434f-a86a-873ead2f66e8.png">
 
 **_Synthesis Statistics_**
 
@@ -1139,17 +1151,17 @@ end
 
 **_GTK Wave_**
 
-<img width="641" alt="Screenshot (260)" src="https://user-images.githubusercontent.com/93824690/166264948-65dc25ba-0bdd-4ff2-b6de-8b3616d665f5.png">
+<img width="700" alt="Screenshot (260)" src="https://user-images.githubusercontent.com/93824690/166264948-65dc25ba-0bdd-4ff2-b6de-8b3616d665f5.png">
 
 >_When select signal is 00, the output follows i0 and is i1 when the select value is 01. Since the output is undefined for 10 and 11 values, the presence of default sets the output to i2 when the select line is 10 or 11. The ouput will not latch and be a proper combinational circuit._
 **_Realization of Logic_**
 
-<img width="400" alt="Screenshot (261)" src="https://user-images.githubusercontent.com/93824690/166264984-ce6f0d0d-473f-409c-9149-f37b5b82234b.png">
+<img width="750" alt="Screenshot (261)" src="https://user-images.githubusercontent.com/93824690/166264984-ce6f0d0d-473f-409c-9149-f37b5b82234b.png">
 
 #### CASE 3: partial case statement
 **_Verilog File_**
 
-<img width="400" alt="p mo" src="https://user-images.githubusercontent.com/93824690/166267883-dfbcec82-f803-458d-bec6-81cd09ad7d4e.png">
+<img width="641" alt="p mo" src="https://user-images.githubusercontent.com/93824690/166267883-dfbcec82-f803-458d-bec6-81cd09ad7d4e.png">
 
 **_Synthesis Statistics_**
 
@@ -1157,7 +1169,7 @@ end
 
 **_Realization of Logic_**
 
-<img width="700" alt="p re" src="https://user-images.githubusercontent.com/93824690/166267900-ca0787fd-c00b-4a33-96b4-7ea15e5f1c41.png">
+<img width="781" alt="p re" src="https://user-images.githubusercontent.com/93824690/166267900-ca0787fd-c00b-4a33-96b4-7ea15e5f1c41.png">
 
 
 ### 5.3 STATEMENTS USING FOR
@@ -1173,21 +1185,21 @@ _Understanding the Usage of For and Generate Statements:_
 
 **_Verilog File_**
 
-<img width="400" alt="1 mo" src="https://user-images.githubusercontent.com/93824690/166277488-bee0a9c4-dc04-4d27-a4fb-28a255550110.png">
+<img width="641" alt="1 mo" src="https://user-images.githubusercontent.com/93824690/166277488-bee0a9c4-dc04-4d27-a4fb-28a255550110.png">
 
 **_GTK Wave_**
 
-<img width="641" alt="1 gtk" src="https://user-images.githubusercontent.com/93824690/166269945-ad59baba-f1d2-46a5-94e5-f1bbe2c33c57.png">
+<img width="750" alt="1 gtk" src="https://user-images.githubusercontent.com/93824690/166269945-ad59baba-f1d2-46a5-94e5-f1bbe2c33c57.png">
 
 #### CASE 2: demux using case statement.v
 
 **_Verilog File_**
 
-<img width="400" alt="2 mo" src="https://user-images.githubusercontent.com/93824690/166270108-568450d2-3a12-4a2c-8a6b-fd9985507a16.png">
+<img width="641" alt="2 mo" src="https://user-images.githubusercontent.com/93824690/166270108-568450d2-3a12-4a2c-8a6b-fd9985507a16.png">
 
 **_GTK Wave_**
 
-<img width="641" alt="2 gtk" src="https://user-images.githubusercontent.com/93824690/166270133-35d829cf-49c9-4dd3-bb01-f4c6e3ad7c40.png">
+<img width="750" alt="2 gtk" src="https://user-images.githubusercontent.com/93824690/166270133-35d829cf-49c9-4dd3-bb01-f4c6e3ad7c40.png">
 
 **_Synthesis Statistics_**
 
@@ -1195,20 +1207,21 @@ _Understanding the Usage of For and Generate Statements:_
 
 **_Realization of Logic_**
 
-<img width="750" alt="2 re" src="https://user-images.githubusercontent.com/93824690/166270182-340652d4-b730-4d3f-aa08-e41d6a3a8657.png">
+<img width="780" alt="2 re" src="https://user-images.githubusercontent.com/93824690/166270182-340652d4-b730-4d3f-aa08-e41d6a3a8657.png">
 
 **_GLS Output_**
-<img width="641" alt="2 gls" src="https://user-images.githubusercontent.com/93824690/166270199-ac2a299b-d0c1-43af-90f8-47070c8dcaaf.png">
+
+<img width="750" alt="2 gls" src="https://user-images.githubusercontent.com/93824690/166270199-ac2a299b-d0c1-43af-90f8-47070c8dcaaf.png">
 
 #### CASE 3: demux using generate if statement.v 
 
 **_Verilog File_**
 
-<img width="400" alt="3 mo" src="https://user-images.githubusercontent.com/93824690/166270221-3f80357f-b973-46b2-b406-a629f891de48.png">
+<img width="641" alt="3 mo" src="https://user-images.githubusercontent.com/93824690/166270221-3f80357f-b973-46b2-b406-a629f891de48.png">
 
 **_GTK Wave_**
 
-<img width="641" alt="3 gtk" src="https://user-images.githubusercontent.com/93824690/166270250-42c21b20-c041-4a00-b594-5152620a00ac.png">
+<img width="750" alt="3 gtk" src="https://user-images.githubusercontent.com/93824690/166270250-42c21b20-c041-4a00-b594-5152620a00ac.png">
 
 **_Synthesis Statistics_**
 
@@ -1220,7 +1233,7 @@ _Understanding the Usage of For and Generate Statements:_
 
 **_GLS Output_**
 
-<img width="641" alt="3 gls" src="https://user-images.githubusercontent.com/93824690/166270307-c3b44ff7-47eb-43c3-a2dd-8fd28150234e.png">
+<img width="750" alt="3 gls" src="https://user-images.githubusercontent.com/93824690/166270307-c3b44ff7-47eb-43c3-a2dd-8fd28150234e.png">
 
 
 ### 5.3 STATEMENTS USING GENERATE
@@ -1229,11 +1242,11 @@ _Understanding the Usage of For and Generate Statements:_
 >_Instantiating the full adder in a loop to replicate the hardware_
 **_Verilog File_**
 
-<img width="400" alt="1 mo" src="https://user-images.githubusercontent.com/93824690/166288993-0b0dbf2a-6e77-4510-b38c-9aa11013dedf.png">
+<img width="641" alt="1 mo" src="https://user-images.githubusercontent.com/93824690/166288993-0b0dbf2a-6e77-4510-b38c-9aa11013dedf.png">
 
 **_GTK Wave_**
 
-<img width="641" alt="1 gtk" src="https://user-images.githubusercontent.com/93824690/166289014-d5cc1b41-f990-48d8-99b0-acf9813e3f45.png">
+<img width="750" alt="1 gtk" src="https://user-images.githubusercontent.com/93824690/166289014-d5cc1b41-f990-48d8-99b0-acf9813e3f45.png">
 
 **_Synthesis Statistics_**
 
@@ -1241,22 +1254,28 @@ _Understanding the Usage of For and Generate Statements:_
 
 **_Realization of Logic - rca_**
 
-<img width="750" alt="1 re" src="https://user-images.githubusercontent.com/93824690/166289044-113508a0-3f96-4aca-9edf-3f492b0f265d.png">
+<img width="850" alt="1 re" src="https://user-images.githubusercontent.com/93824690/166289044-113508a0-3f96-4aca-9edf-3f492b0f265d.png">
 
 **_Realization of Logic- fa_**
 
-<img width="750" alt="1 re2" src="https://user-images.githubusercontent.com/93824690/166289066-d06cbd35-015e-4dfb-baf9-138399256918.png">
+<img width="850" alt="1 re2" src="https://user-images.githubusercontent.com/93824690/166289066-d06cbd35-015e-4dfb-baf9-138399256918.png">
 
 **_GLS Output_**
 
-<img width="641" alt="1 gls" src="https://user-images.githubusercontent.com/93824690/166289126-d0980b69-c9d8-4e66-8011-631610d98480.png">
+<img width="750" alt="1 gls" src="https://user-images.githubusercontent.com/93824690/166289126-d0980b69-c9d8-4e66-8011-631610d98480.png">
 
+>_The observed waveform in simulation and synthesis matches and conforms code functionality._
 
+## ACKNOWLEDGEMENTS
 
+  * Kunal Ghosh, Co-Founder (VLSI SYSTEM DESIGN - VSD)
+  * Shon Taware
 
-
-
-
+## References
+   * https://www.vlsisystemdesign.com/rtl-design-using-verilog-with-sky130-technology/?q=%2Frtl-design-using-verilog-with-sky130-technology%2F&v=a98eef2a3105
+   * https://github.com/kunalg123/vsdflow
+   * https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop
+   * https://github.com/google/skywater-pdk
 
 
 
