@@ -203,7 +203,7 @@ $ !gvim multiple_modules_hier.v
 
 **Netlist file**
 
-<img width="350" height="700" alt="Screen Shot 2021-09-04 at 4 32 57 AM" src ="https://user-images.githubusercontent.com/89927660/132089951-73857fd9-aba8-40ac-b477-b316c8df5dc4.png">
+<img width="400" height="800" alt="Screen Shot 2021-09-04 at 4 32 57 AM" src ="https://user-images.githubusercontent.com/89927660/132089951-73857fd9-aba8-40ac-b477-b316c8df5dc4.png">
 
 #### Flat synthesis  
 
