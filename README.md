@@ -94,7 +94,7 @@ _We are given a default set of files and libraries shown below to work on using 
 $ gvim tb_good_mux.v -o good_mux.v 
 ```
 
-<img width="641" alt="Screen Shot 2021-09-02 at 12 23 28 AM" src="https://user-images.githubusercontent.com/89927660/131786618-c6d4663f-5375-48dc-aa16-46b70e6797da.png">
+<img width="400" alt="Screen Shot 2021-09-02 at 12 23 28 AM" src="https://user-images.githubusercontent.com/89927660/131786618-c6d4663f-5375-48dc-aa16-46b70e6797da.png">
 
 ### 1.3. Introduction to Yosys & Logic Synthesis
 
